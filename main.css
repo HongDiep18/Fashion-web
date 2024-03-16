@@ -21,6 +21,7 @@ html {
     font-weight: 700;
 
 }
+
 .padding-15 {
     padding: 0 15px
 }
@@ -119,7 +120,7 @@ html {
     transform: translateY(-50%);
 }
 
-.buy-btn a{
+.buy-btn a {
     text-decoration: none;
     color: #000;
 }
@@ -139,6 +140,8 @@ html {
 
 .slider-images {
     display: flex;
+    margin-bottom: 10px;
+
 }
 
 .slider-images img {
@@ -159,11 +162,11 @@ html {
     height: 12px;
     width: 12px;
     border-radius: 20px;
-    border: 2px solid red;
+    border: 2px solid black;
 }
 
 .label-slider label:hover {
-    background-color: rgb(19, 20, 20);
+    background-color: rgb(149, 145, 145);
 }
 
 #img1:checked~.imgslider1 {
@@ -195,35 +198,53 @@ html {
     min-width: 992px;
     padding: 40px 0 30px;
 }
+
 .row h4 {
     color: #9b9b9b;
     font-size: 18px;
     padding: 12px 0;
+    font-weight: bold;
 }
-.row p {
+
+.row p,
+.support li a {
     color: #fff;
     font-size: 14px;
-    line-height: 1.4;
+    line-height: 22.4px;
 }
 
 /* About */
-.row .about { 
+.row .about {
     width: 18%;
 }
+
+.about .certifi-btn {
+    margin-top: 11px;
+
+}
+
 .about .certifi-btn img {
     max-width: 150px;
 }
 
 /* Address */
 .row .address {
-    width: 17%;
+    width: 19%;
 
-}   
+}
 
 /* Support */
 .row .support {
     width: 18%;
+}
 
+.support li::marker {
+    color: #fff;
+
+}
+
+.row .support a {
+    list-style-type: square;
 }
 
 /* Care */
@@ -232,19 +253,39 @@ html {
 
 }
 
-.support a, .social-btn a {
+.care .phone-contact {
+    display: flex;
+}
+
+.care .phone-contact .icon-phone {
+    width: 18%;
+}
+
+.phone-contact .icon-phone i {
+    font-size: 28px;
+    margin-top: 7px;
+
+}
+
+.care .phone-contact .number-phone {
+    width: 40%;
+}
+
+
+/* Social */
+.support a,
+.social-btn a {
     text-decoration: none;
     color: #fff;
-    list-style-type: none;
 }
 
 .social-btn ul {
     display: flex;
     flex-direction: row;
-    
+
 }
 
-.social-btn li a{
+.social-btn li a {
     display: inline-block;
     border: 1px solid #fff;
     margin: 0 10px;
@@ -254,4 +295,9 @@ html {
     text-align: center;
     line-height: 2.1;
     font-size: 14px;
+}
+
+.social-btn li a:hover {
+    
+    border-color: #000;
 }
