@@ -39,6 +39,7 @@ html {
     display: flex;
     justify-content: center;
     background-color: white;
+    z-index: 2;
 }
 
 .wrap-header {
