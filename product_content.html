@@ -16,9 +16,9 @@
     <link rel="stylesheet" href="product.html">
 </head>
 <body>
-  
+
     <div class="container">
-       
+
          <div id="header">
             <div class="wrap-header" style="display: inline-flex;">
                 <div> <a href=""><img class="logo" src="assets/image/logo.webp" alt=""></a></div>
@@ -40,8 +40,8 @@
                 </div>
             </div>
         </div>
-     
-        <div class="left"> 
+
+        <div class="left">
             <div id="title_product_1">
                 <a href="index.html">Trang chủ</a>
                 <i>h</i>
@@ -51,15 +51,15 @@
                 <i>h</i>
                 <p>/</p>
                 <i>h</i>
-  
+
                 <p id="name_title_product"></p>
             </div>
 
             <table>
                 <tr>
-                  
+
                     <td>
-                      <ul><li><a href="#"><img src=""   id="img_pd_1"></a></li></ul>
+                      <ul><li><a href="#"><img src="" id="img_pd_1"></a></li></ul>
                       <ul><li><a href="#"><img src="" id="img_pd_2"></a></li></ul>
                       <ul><li><a href="#"><img src="" id="img_pd_3"></a></li></ul>
                       <ul><li><a href="#"><img src="" id="img_pd_4"></a></li></ul>
@@ -72,18 +72,16 @@
                                 <input type="radio" name="inputslider" id="imgpd3">
                                 <input type="radio" name="inputslider" id="imgpd4">
                                 <input type="radio" name="inputslider" id="imgpd5">
-                                
-                    
-                               <img src=""   alt="imgpd1" class="imgslider1"/>
+
+                               <img src="" alt="imgpd1" class="imgslider1"/>
                                <img src="" alt="imgpd2" class="imgslider2" />
                                <img src="" alt="imgpd3" class="imgslider3"/>
                                <img src="" alt="imgpd4" class="imgslider4"/>
                                <img src="" alt="imgpd5" class="imgslider5"/>
 
-                               
                             </div>
-                    
-                                <div class="lableslider_pd">   
+
+                                <div class="lableslider_pd">
                                     <label for="imgpd1"></label>
                                     <label for="imgpd2"></label>
                                     <label for="imgpd3"></label>
@@ -95,36 +93,39 @@
                 </tr>
             </table>
 </div>
-     
+
         <div class="right">
             <div id="product_information">
-             
+
                 <h2 id="name-product">
                 </h2>
                     <table>
                         <tr>
+                            <td id="discount_info">
+                                <p id="discount_info_detail"></p>
+                            </td>
+
                             <td>
-                               
                                 <div id="discount_pd">
                                   <p id="pv_discount"></p>
                                 </div>
                             </td>
                             <td>
-                            
+
                                 <div id="price_pd">
                                     <p id="pv_price"></p>
                                 </div>
                             </td>
                         </tr>
                     </table>
-        
-                    <div class="size" id="size_">SIZE : </div> 
+
+                    <div class="size" id="size_"><b>SIZE : </b></div>
                     <button id="size1" class="box_size"  onclick="changeColor(this)"><a href="#"></a></button>
                     <button id="size2" class="box_size"  onclick="changeColor(this)"><a href="#"></a></button>
                     <button id="size3" class="box_size"  onclick="changeColor(this)"><a href="#"></a></button>
                     <button id="size4" class="box_size"  onclick="changeColor(this)"><a href="#"></a></button>
-                        
-                    
+
+
                     <table>
                         <tr>
                             <td>
@@ -139,7 +140,7 @@
                                 </td>
                         </tr>
                     </table>
-        
+
                     <table>
                         <tr>
                             <td>
@@ -151,7 +152,7 @@
                         </tr>
                     </table>
                     <div class="pd_Info" id="pd_Info">
-                        THÔNG TIN SẢN PHẨM
+                        <b>THÔNG TIN SẢN PHẨM</b>
                           <div id="more_pd_Info">
                               <p><b id="title1"></b></p><br><br>
                                  <p id="content1"></p><br><br>
@@ -192,7 +193,7 @@
                       </div>
 
                       <div class="pd_sv" id="pd_sv">
-                        DỊCH VỤ GIAO HÀNG
+                        <b>DỊCH VỤ GIAO HÀNG</b>
                           <div id="more_pd_sv">
                             <table>
                                 <tr>
@@ -202,7 +203,7 @@
 
                                 <tr>
                                     <td><i class="ti-truck"> </i></td>
-                                    <td> 
+                                    <td>
                                         <p>Giao hàng dự kiến:</p><br>
                                         <h5> Thứ 2 - Thứ 7 từ 9h00 - 17h00</h5><br>
                                     </td>
@@ -222,7 +223,7 @@
         </div>
 
     </div>
- 
+
 
    <div class="relatedp">
     <hr>
@@ -230,7 +231,7 @@
          <div class="relatedp-products">
           <table>
             <tr>
-                <td> 
+                <td>
                     <img src="product_img/product_16.jpg" alt="">
                     <div id="text">Nước Hoa Degrey Black<br>Miack No1. forhim - HIM
                         <div id="price">168,000<u>đ</u>
@@ -341,7 +342,7 @@
         </div>
     </div>
         <script>
-        
+
             function decreaseQuantity() {
               var quantityInput = document.getElementById('quantity');
               var currentValue = parseInt(quantityInput.value);
@@ -349,7 +350,7 @@
                 quantityInput.value = currentValue - 1;
               }
             }
-            
+
             function increaseQuantity() {
               var quantityInput = document.getElementById('quantity');
               var currentValue = parseInt(quantityInput.value);
@@ -393,20 +394,20 @@
     document.addEventListener('DOMContentLoaded', function () {
         const urlParams = new URLSearchParams(window.location.search);
         const productId = urlParams.get('id');
-        const numberOfImages = 2; 
-        const numberOfImages2 = 3; 
-        const numberOfImages3 = 4; 
+        const numberOfImages = 2;
+        const numberOfImages2 = 3;
+        const numberOfImages3 = 4;
 
 
         if (productId === '1') {
-            document.getElementById('img_pd_1').src = 'product_img/product_1.jpg';
+                document.getElementById('img_pd_1').src = 'product_img/product_1.jpg';
                 document.getElementById('img_pd_2').src = 'product_img/product_1.1.jpg';
                 document.getElementById('img_pd_3').src = 'product_img/product_1.2.jpg';
                 document.getElementById('img_pd_4').src = 'product_img/product_1.3.jpg';
                 document.getElementById('img_pd_5').src = 'product_img/product_1.4.jpg';
                 document.getElementById('size1').innerText = 'S';
                  document.getElementById('size2').innerText = 'M';
-                 document.getElementById('size3').innerText ='L';   
+                 document.getElementById('size3').innerText ='L';
                  document.getElementById('size4').style.display='none';
 
 
@@ -421,10 +422,14 @@
                 document.getElementById('content9').innerText = '- Không dùng hóa chất tẩy lên sản phẩm';
                 document.getElementById('content10').innerText = '- Bạn nên giặt tay và LỘN NGƯỢC ÁO trước khi giặt.';
                 document.getElementById('content11').innerText = '- Không ủi trực tiếp lên hình in.';
-                document.getElementById('content12').innerText = '- Hạn chế sử dụng máy sấy và ủi (nếu có) chỉ nên ủi lên vải hoặc sử dụng bàn ủi hơi';
-                document.getElementById('content13').innerText = 'nước ở nhiệt độ thích hợp. ';
-                document.getElementById('content14').innerText = '+ CHÍNH SÁCH ĐỔI SẢN PHẨM: ';
-                document.getElementById('content15').innerText = '1.Điều kiện đổi hàng';
+                document.getElementById('content12').innerText = '- Hạn chế sử dụng máy sấy và ủi (nếu có) chỉ nên ủi lên vải hoặc sử dụng bàn ủi hơi nước ở nhiệt độ thích hợp.';
+                document.getElementById('content13').innerText = ' ';
+                var content14Element = document.getElementById('content14');
+                content14Element.innerText = '+ CHÍNH SÁCH ĐỔI SẢN PHẨM: ';
+                content14Element.style.fontWeight = 600;
+                var content15Element = document.getElementById('content15');
+                content15Element.innerText = '1. Điều kiện đổi hàng';
+                content15Element.style.fontWeight = 600;
                 document.getElementById('content16').innerText = '- Bạn lưu ý giữ lại hoá đơn để đổi hàng trong vòng 30 ngày.';
                 document.getElementById('content17').innerText = 'cơ thể. ';
                 document.getElementById('content17').innerText = '- Đối với mặt hàng giảm giá, phụ kiện cá nhân (áo lót, khẩu trang, vớ ...) không';
@@ -434,13 +439,15 @@
                 document.getElementById('content21').innerText = 'qua sử dụng, còn tag nhãn và hóa đơn mua hàng.)';
                 document.getElementById('content22').innerText ='- Bạn vui lòng gửi cho chúng mình clip đóng gói và hình ảnh của đơn hàng đổi trả';
                 document.getElementById('content23').innerText ='của bạn, nhân viên tư vấn sẽ xác nhận và tiến hành lên đơn đổi trả cho bạn.';
-                document.getElementById('content24').innerText ='2. Trường hợp khiếu nại';
+                var content24Element = document.getElementById('content24');
+                content24Element.innerText = '2. Trường hợp khiếu nại';
+                content24Element.style.fontWeight = 600;
                 document.getElementById('content25').innerText ='- Bạn phải có video unbox hàng';
                 document.getElementById('content26').innerText ='- Quay video rõ nét 6 mặt của gói hàng';
                 document.getElementById('content27').innerText ='- Quay rõ: Tên người nhận, mã đơn, địa chỉ, số điện thoại.';
                 document.getElementById('content28').innerText ='- Clip không cắt ghép, chỉnh sửa';
-                document.getElementById('content29').innerText ='- Degrey xin không tiếp nhận giải quyết các trường hợp không thỏa các điều kiện';
-                document.getElementById('content30').innerText ='trên.';
+                document.getElementById('content29').innerText ='- Degrey xin không tiếp nhận giải quyết các trường hợp không thỏa các điều kiện trên.';
+                document.getElementById('content30').innerText ='';
 
                 document.querySelector('.imgslider1').src = 'product_img/product_1.jpg';
                 document.querySelector('.imgslider2').src = 'product_img/product_1.1.jpg';
@@ -450,6 +457,7 @@
 
                  document.getElementById('name_title_product').innerText = 'Degrey.Modmonks Tee Vietnam 84 Đỏ DV84 Đỏ';
                  document.getElementById('name-product').innerText = 'Degrey.Madmonks Tee Vietnam 84 Đỏ DV84 Đỏ';
+                 document.getElementById('discount_info_detail').innerText = '-34%';
                  document.getElementById('pv_discount').innerText = '440.000đ';
                  document.getElementById('pv_price').innerText = '290.000đ';
         }
@@ -479,8 +487,12 @@
                 document.getElementById('content11').innerText = '- Không ủi trực tiếp lên hình in.';
                 document.getElementById('content12').innerText = '- Hạn chế sử dụng máy sấy và ủi (nếu có) chỉ nên ủi lên vải hoặc sử dụng bàn ủi hơi';
                 document.getElementById('content13').innerText = 'nước ở nhiệt độ thích hợp. ';
-                document.getElementById('content14').innerText = '+ CHÍNH SÁCH ĐỔI SẢN PHẨM: ';
-                document.getElementById('content15').innerText = '1.Điều kiện đổi hàng';
+                var content14Element = document.getElementById('content14');
+                content14Element.innerText = '+ CHÍNH SÁCH ĐỔI SẢN PHẨM: ';
+                content14Element.style.fontWeight = 600;
+                var content15Element = document.getElementById('content15');
+                content15Element.innerText = '1. Điều kiện đổi hàng';
+                content15Element.style.fontWeight = 600;
                 document.getElementById('content16').innerText = '- Bạn lưu ý giữ lại hoá đơn để đổi hàng trong vòng 30 ngày.';
                 document.getElementById('content17').innerText = 'cơ thể. ';
                 document.getElementById('content17').innerText = '- Đối với mặt hàng giảm giá, phụ kiện cá nhân (áo lót, khẩu trang, vớ ...) không';
@@ -490,7 +502,9 @@
                 document.getElementById('content21').innerText = 'qua sử dụng, còn tag nhãn và hóa đơn mua hàng.)';
                 document.getElementById('content22').innerText ='- Bạn vui lòng gửi cho chúng mình clip đóng gói và hình ảnh của đơn hàng đổi trả';
                 document.getElementById('content23').innerText ='của bạn, nhân viên tư vấn sẽ xác nhận và tiến hành lên đơn đổi trả cho bạn.';
-                document.getElementById('content24').innerText ='2. Trường hợp khiếu nại';
+                var content24Element = document.getElementById('content24');
+                content24Element.innerText = '2. Trường hợp khiếu nại';
+                content24Element.style.fontWeight = 600;
                 document.getElementById('content25').innerText ='- Bạn phải có video unbox hàng';
                 document.getElementById('content26').innerText ='- Quay video rõ nét 6 mặt của gói hàng';
                 document.getElementById('content27').innerText ='- Quay rõ: Tên người nhận, mã đơn, địa chỉ, số điện thoại.';
@@ -506,6 +520,7 @@
 
                  document.getElementById('name_title_product').innerText = 'Degrey.Modmonks Tee áo thun thời trang';
                  document.getElementById('name-product').innerText = 'Degrey.Madmonks Tee áo thun thời trang';
+                 document.getElementById('discount_info_detail').innerText = '-11%';
                  document.getElementById('pv_discount').innerText = '350.000đ';
                  document.getElementById('pv_price').innerText = '340.000đ';
         }
@@ -516,6 +531,7 @@
                  document.getElementById('name_title_product').innerText = 'Degrey.Modmonks Tee Body mist Unisex Sweet Girl';
                  document.getElementById('name-product').innerText = 'Degrey.Modmonks Tee Body mist Unisex Sweet Girl';
                  document.getElementById('pv_discount').innerText = '250.000đ';
+                 document.getElementById('discount_info_detail').innerText = '-48.4%';
                  document.getElementById('pv_price').innerText = '129.000đ';
                  document.getElementById('size1').innerText = '150ml';
                  document.getElementById('size2').innerText = '65ml';
@@ -564,18 +580,18 @@
                 document.getElementById('img_pd_3').style.display='none';
                 document.getElementById('img_pd_4').style.display='none';
                 document.getElementById('img_pd_5').style.display='none';
-                
+
 
                 document.querySelector('.imgslider1').src = 'product_img/product_3.jpg';
                 document.querySelector('.imgslider2').src = 'product_img/product_3.1.jpg';
                 if (numberOfImages < 5) {
 
         for (let i = numberOfImages + 1; i <= 5; i++) {
-        document.getElementById(`imgpd${i}`).style.display = 'none'; 
-        document.querySelector(`.imgslider${i}`).style.display = 'none'; 
+        document.getElementById(`imgpd${i}`).style.display = 'none';
+        document.querySelector(`.imgslider${i}`).style.display = 'none';
         document.querySelector(`.lableslider_pd label:nth-child(${i})`).style.display = 'none';
     }
-  }           
+  }
 }
 
         if (productId === '4') {
@@ -599,6 +615,7 @@
                  document.getElementById('name_title_product').innerText = 'Degrey.Modmonks Tee Hoodie Degrey Is Us - HDIS';
                  document.getElementById('name-product').innerText = 'Degrey.Madmonks Tee Hoodie Degrey Is Us - HDIS';
                  document.getElementById('pv_discount').innerText = '480.000đ';
+                 document.getElementById('discount_info_detail').innerText = '-18.75%';
                  document.getElementById('pv_price').innerText = '390.000đ';
                  document.getElementById('content1').innerText = '- Chất liệu: chân cua';
                 document.getElementById('content2').innerText = '- Họa tiết: Được thêu trực tiếp lên sản phẩm';
@@ -613,8 +630,12 @@
                 document.getElementById('content11').innerText = '- Không ủi trực tiếp lên hình in.';
                 document.getElementById('content12').innerText = '- Hạn chế sử dụng máy sấy và ủi (nếu có) chỉ nên ủi lên vải hoặc sử dụng bàn ủi hơi';
                 document.getElementById('content13').innerText = 'nước ở nhiệt độ thích hợp. ';
-                document.getElementById('content14').innerText = '+ CHÍNH SÁCH ĐỔI SẢN PHẨM: ';
-                document.getElementById('content15').innerText = '1.Điều kiện đổi hàng';
+                var content14Element = document.getElementById('content14');
+                content14Element.innerText = '+ CHÍNH SÁCH ĐỔI SẢN PHẨM: ';
+                content14Element.style.fontWeight = 600;
+                var content15Element = document.getElementById('content15');
+                content15Element.innerText = '1. Điều kiện đổi hàng';
+                content15Element.style.fontWeight = 600;
                 document.getElementById('content16').innerText = '- Bạn lưu ý giữ lại hoá đơn để đổi hàng trong vòng 30 ngày.';
                 document.getElementById('content17').innerText = 'cơ thể. ';
                 document.getElementById('content17').innerText = '- Đối với mặt hàng giảm giá, phụ kiện cá nhân (áo lót, khẩu trang, vớ ...) không';
@@ -624,7 +645,9 @@
                 document.getElementById('content21').innerText = 'qua sử dụng, còn tag nhãn và hóa đơn mua hàng.)';
                 document.getElementById('content22').innerText ='- Bạn vui lòng gửi cho chúng mình clip đóng gói và hình ảnh của đơn hàng đổi trả';
                 document.getElementById('content23').innerText ='của bạn, nhân viên tư vấn sẽ xác nhận và tiến hành lên đơn đổi trả cho bạn.';
-                document.getElementById('content24').innerText ='2. Trường hợp khiếu nại';
+                var content24Element = document.getElementById('content24');
+                content24Element.innerText = '2. Trường hợp khiếu nại';
+                content24Element.style.fontWeight = 600;
                 document.getElementById('content25').innerText ='- Bạn phải có video unbox hàng';
                 document.getElementById('content26').innerText ='- Quay video rõ nét 6 mặt của gói hàng';
                 document.getElementById('content27').innerText ='- Quay rõ: Tên người nhận, mã đơn, địa chỉ, số điện thoại.';
@@ -635,10 +658,11 @@
 
         if (productId === '5') {
 
-     document.getElementById('first_title').innerText = 'phụ kiện'  
+     document.getElementById('first_title').innerText = 'phụ kiện'
      document.getElementById('name_title_product').innerText = 'Degrey.Modmonks Tee Body mist Nam Nữ Unisex';
      document.getElementById('name-product').innerText = 'Degrey.Modmonks Tee Body mist Nam Nữ Unisex';
      document.getElementById('pv_discount').innerText = '250.000đ';
+     document.getElementById('discount_info_detail').innerText = '-48.4%';
      document.getElementById('pv_price').innerText = '129.000đ';
      document.getElementById('size1').innerText = '150ml';
      document.getElementById('size2').innerText = '65ml';
@@ -682,23 +706,23 @@
                 document.getElementById('content30').style.display='none';
                 document.getElementById('content31').style.display='none';
 
-    document.getElementById('img_pd_1').src = 'product_img/product_5.jpg';
-    document.getElementById('img_pd_2').src = 'product_img/product_5.1.jpg';
-    document.getElementById('img_pd_3').style.display='none';
-    document.getElementById('img_pd_4').style.display='none';
-    document.getElementById('img_pd_5').style.display='none';
-    
+        document.getElementById('img_pd_1').src = 'product_img/product_5.jpg';
+        document.getElementById('img_pd_2').src = 'product_img/product_5.1.jpg';
+        document.getElementById('img_pd_3').style.display='none';
+        document.getElementById('img_pd_4').style.display='none';
+        document.getElementById('img_pd_5').style.display='none';
 
-    document.querySelector('.imgslider1').src = 'product_img/product_5.jpg';
-    document.querySelector('.imgslider2').src = 'product_img/product_5.1.jpg';
-    if (numberOfImages < 5) {
 
-    for (let i = numberOfImages + 1; i <= 5; i++) {
-    document.getElementById(`imgpd${i}`).style.display = 'none'; 
-    document.querySelector(`.imgslider${i}`).style.display = 'none'; 
-    document.querySelector(`.lableslider_pd label:nth-child(${i})`).style.display = 'none';
+        document.querySelector('.imgslider1').src = 'product_img/product_5.jpg';
+        document.querySelector('.imgslider2').src = 'product_img/product_5.1.jpg';
+        if (numberOfImages < 5) {
+
+       for (let i = numberOfImages + 1; i <= 5; i++) {
+        document.getElementById(`imgpd${i}`).style.display = 'none';
+        document.querySelector(`.imgslider${i}`).style.display = 'none';
+        document.querySelector(`.lableslider_pd label:nth-child(${i})`).style.display = 'none';
    }
-  } 
+  }
  }
 
  if (productId === '6') {
@@ -721,6 +745,7 @@
 
                  document.getElementById('name_title_product').innerText = 'Áo Khoác Degrey Cardigan màu kem nâu - Car';
                  document.getElementById('name-product').innerText = 'Áo Khoác Degrey Cardigan màu kem nâu - Car';
+                 document.getElementById('discount_info_detail').innerText = '-19%';
                  document.getElementById('pv_discount').innerText = '480.000đ';
                  document.getElementById('pv_price').innerText = '450.000đ';
                  document.getElementById('content1').innerText = '- Chất liệu: 250gsm, cotton 2 chiều';
@@ -736,8 +761,12 @@
                 document.getElementById('content11').innerText = '- Không ủi trực tiếp lên hình in.';
                 document.getElementById('content12').innerText = '- Hạn chế sử dụng máy sấy và ủi (nếu có) chỉ nên ủi lên vải hoặc sử dụng bàn ủi hơi';
                 document.getElementById('content13').innerText = 'nước ở nhiệt độ thích hợp. ';
-                document.getElementById('content14').innerText = '+ CHÍNH SÁCH ĐỔI SẢN PHẨM: ';
-                document.getElementById('content15').innerText = '1.Điều kiện đổi hàng';
+                 var content14Element = document.getElementById('content14');
+                content14Element.innerText = '+ CHÍNH SÁCH ĐỔI SẢN PHẨM: ';
+                content14Element.style.fontWeight = 600;
+                var content15Element = document.getElementById('content15');
+                content15Element.innerText = '1. Điều kiện đổi hàng';
+                content15Element.style.fontWeight = 600;
                 document.getElementById('content16').innerText = '- Bạn lưu ý giữ lại hoá đơn để đổi hàng trong vòng 30 ngày.';
                 document.getElementById('content17').innerText = 'cơ thể. ';
                 document.getElementById('content17').innerText = '- Đối với mặt hàng giảm giá, phụ kiện cá nhân (áo lót, khẩu trang, vớ ...) không';
@@ -747,13 +776,15 @@
                 document.getElementById('content21').innerText = 'qua sử dụng, còn tag nhãn và hóa đơn mua hàng.)';
                 document.getElementById('content22').innerText ='- Bạn vui lòng gửi cho chúng mình clip đóng gói và hình ảnh của đơn hàng đổi trả';
                 document.getElementById('content23').innerText ='của bạn, nhân viên tư vấn sẽ xác nhận và tiến hành lên đơn đổi trả cho bạn.';
-                document.getElementById('content24').innerText ='2. Trường hợp khiếu nại';
+                var content24Element = document.getElementById('content24');
+                content24Element.innerText = '2. Trường hợp khiếu nại';
+                content24Element.style.fontWeight = 600;
                 document.getElementById('content25').innerText ='- Bạn phải có video unbox hàng';
                 document.getElementById('content26').innerText ='- Quay video rõ nét 6 mặt của gói hàng';
                 document.getElementById('content27').innerText ='- Quay rõ: Tên người nhận, mã đơn, địa chỉ, số điện thoại.';
                 document.getElementById('content28').innerText ='- Clip không cắt ghép, chỉnh sửa';
-                document.getElementById('content29').innerText ='- Degrey xin không tiếp nhận giải quyết các trường hợp không thỏa các điều kiện';
-                document.getElementById('content30').innerText ='trên.';
+                document.getElementById('content29').innerText ='- Degrey xin không tiếp nhận giải quyết các trường hợp không thỏa các điều kiện trên.';
+                document.getElementById('content30').innerText ='';
         }
 
         if (productId === '7') {
@@ -780,6 +811,7 @@
                  document.getElementById('name_title_product').innerText = 'Degrey Leather Basic Balo Kem Samll Size - LBBMK';
                  document.getElementById('name-product').innerText = 'Degrey Leather Basic Balo Kem Samll Size - LBBMK';
                  document.getElementById('pv_discount').innerText = '390.000đ';
+                 document.getElementById('discount_info_detail').innerText = '-3%';
                  document.getElementById('pv_price').innerText = '380.000đ';
                  document.getElementById('content1').innerText = '- Chất liệu: Simili';
                 document.getElementById('content2').innerText = '- Hoạ tiết: dập chìm logo';
@@ -794,8 +826,12 @@
                 document.getElementById('content11').innerText = '- Không giặt máy';
                 document.getElementById('content12').innerText = '- Sử dụng bàn chải có lông mềm';
                 document.getElementById('content13').innerText = '- Tuyệt đối không dùng bàn chải cước cứng sẽ gây ra các vết xước trên nền vải';
-                document.getElementById('content14').innerText = '+ CHÍNH SÁCH ĐỔI SẢN PHẨM: ';
-                document.getElementById('content15').innerText = '1.Điều kiện đổi hàng';
+                var content14Element = document.getElementById('content14');
+                content14Element.innerText = '+ CHÍNH SÁCH ĐỔI SẢN PHẨM: ';
+                content14Element.style.fontWeight = 600;
+                var content15Element = document.getElementById('content15');
+                content15Element.innerText = '1. Điều kiện đổi hàng';
+                content15Element.style.fontWeight = 600;
                 document.getElementById('content16').innerText = '- Bạn lưu ý giữ lại hoá đơn để đổi hàng trong vòng 30 ngày.';
                 document.getElementById('content17').innerText = 'cơ thể. ';
                 document.getElementById('content17').innerText = '- Đối với mặt hàng giảm giá, phụ kiện cá nhân (áo lót, khẩu trang, vớ ...) không';
@@ -810,8 +846,8 @@
                 document.getElementById('content26').innerText ='- Quay video rõ nét 6 mặt của gói hàng';
                 document.getElementById('content27').innerText ='- Quay rõ: Tên người nhận, mã đơn, địa chỉ, số điện thoại.';
                 document.getElementById('content28').innerText ='- Clip không cắt ghép, chỉnh sửa';
-                document.getElementById('content29').innerText ='- Degrey xin không tiếp nhận giải quyết các trường hợp không thỏa các điều kiện';
-                document.getElementById('content30').innerText ='trên.';
+                document.getElementById('content29').innerText ='- Degrey xin không tiếp nhận giải quyết các trường hợp không thỏa các điều kiện trên.';
+                document.getElementById('content30').innerText ='';
         }
 
         if (productId === '8') {
@@ -832,11 +868,12 @@
                 document.getElementById('size3').style.display='none';
                 document.getElementById('size4').style.display='none';
                 document.getElementById('size_').style.display='none';
-                
+
                 document.getElementById('first_title').innerText = 'phụ kiện'
                  document.getElementById('name_title_product').innerText = '(White Moment) Balo Da Degrey 2 Ngăn Big Logo - BWM';
                  document.getElementById('name-product').innerText = '(White Moment) Balo Da<br>Degrey 2 Ngăn Big Logo - BWM';
                  document.getElementById('pv_discount').innerText = '500.000đ';
+                 document.getElementById('discount_info_detail').innerText = '-2%';
                  document.getElementById('pv_price').innerText = '490.000đ';
                  document.getElementById('content1').innerText = '- Chất liệu: Simili';
                 document.getElementById('content2').innerText = '- Hoạ tiết: dập chìm logo';
@@ -851,8 +888,12 @@
                 document.getElementById('content11').innerText = '- Không giặt máy';
                 document.getElementById('content12').innerText = '- Sử dụng bàn chải có lông mềm';
                 document.getElementById('content13').innerText = '- Tuyệt đối không dùng bàn chải cước cứng sẽ gây ra các vết xước trên nền vải';
-                document.getElementById('content14').innerText = '+ CHÍNH SÁCH ĐỔI SẢN PHẨM: ';
-                document.getElementById('content15').innerText = '1.Điều kiện đổi hàng';
+                var content14Element = document.getElementById('content14');
+                content14Element.innerText = '+ CHÍNH SÁCH ĐỔI SẢN PHẨM: ';
+                content14Element.style.fontWeight = 600;
+                var content15Element = document.getElementById('content15');
+                content15Element.innerText = '1. Điều kiện đổi hàng';
+                content15Element.style.fontWeight = 600;
                 document.getElementById('content16').innerText = '- Bạn lưu ý giữ lại hoá đơn để đổi hàng trong vòng 30 ngày.';
                 document.getElementById('content17').innerText = 'cơ thể. ';
                 document.getElementById('content17').innerText = '- Đối với mặt hàng giảm giá, phụ kiện cá nhân (áo lót, khẩu trang, vớ ...) không';
@@ -862,13 +903,15 @@
                 document.getElementById('content21').innerText = 'qua sử dụng, còn tag nhãn và hóa đơn mua hàng.)';
                 document.getElementById('content22').innerText ='- Bạn vui lòng gửi cho chúng mình clip đóng gói và hình ảnh của đơn hàng đổi trả';
                 document.getElementById('content23').innerText ='của bạn, nhân viên tư vấn sẽ xác nhận và tiến hành lên đơn đổi trả cho bạn.';
-                document.getElementById('content24').innerText ='2. Trường hợp khiếu nại';
+                var content24Element = document.getElementById('content24');
+                content24Element.innerText = '2. Trường hợp khiếu nại';
+                content24Element.style.fontWeight = 600;
                 document.getElementById('content25').innerText ='- Bạn phải có video unbox hàng';
                 document.getElementById('content26').innerText ='- Quay video rõ nét 6 mặt của gói hàng';
                 document.getElementById('content27').innerText ='- Quay rõ: Tên người nhận, mã đơn, địa chỉ, số điện thoại.';
                 document.getElementById('content28').innerText ='- Clip không cắt ghép, chỉnh sửa';
-                document.getElementById('content29').innerText ='- Degrey xin không tiếp nhận giải quyết các trường hợp không thỏa các điều kiện';
-                document.getElementById('content30').innerText ='trên.';
+                document.getElementById('content29').innerText ='- Degrey xin không tiếp nhận giải quyết các trường hợp không thỏa các điều kiện trên.';
+                document.getElementById('content30').innerText ='';
         }
 
         if (productId === '9') {
@@ -877,7 +920,7 @@
                 document.getElementById('img_pd_3').src = 'product_img/product_9.2.jpg';
                 document.getElementById('img_pd_4').style.display='none';
                 document.getElementById('img_pd_5').style.display='none';
-    
+
 
             document.querySelector('.imgslider1').src = 'product_img/product_9.jpg';
             document.querySelector('.imgslider2').src = 'product_img/product_9.1.jpg';
@@ -885,11 +928,11 @@
         if (numberOfImages < 5) {
 
          for (let i = numberOfImages2 + 1; i <= 5; i++) {
-         document.getElementById(`imgpd${i}`).style.display = 'none'; 
-         document.querySelector(`.imgslider${i}`).style.display = 'none'; 
+         document.getElementById(`imgpd${i}`).style.display = 'none';
+         document.querySelector(`.imgslider${i}`).style.display = 'none';
          document.querySelector(`.lableslider_pd label:nth-child(${i})`).style.display = 'none';
    }
-  } 
+  }
 
                 document.getElementById('size1').style.display='none';
                 document.getElementById('size2').style.display='none';
@@ -901,6 +944,7 @@
                  document.getElementById('name_title_product').innerText = 'Degrey Leather ToteBook Kem - DLTK';
                  document.getElementById('name-product').innerText = 'Degrey Leather ToteBook Kem - DLTK';
                  document.getElementById('pv_discount').innerText = '450.000đ';
+                 document.getElementById('discount_info_detail').innerText = '-22%';
                  document.getElementById('pv_price').innerText = '350.000đ';
                  document.getElementById('content1').innerText = '- Chất liệu: Simili';
                 document.getElementById('content2').innerText = '- Hoạ tiết: dập chìm logo';
@@ -915,8 +959,12 @@
                 document.getElementById('content11').innerText = '- Không giặt máy';
                 document.getElementById('content12').innerText = '- Sử dụng bàn chải có lông mềm';
                 document.getElementById('content13').innerText = '- Tuyệt đối không dùng bàn chải cước cứng sẽ gây ra các vết xước trên nền vải';
-                document.getElementById('content14').innerText = '+ CHÍNH SÁCH ĐỔI SẢN PHẨM: ';
-                document.getElementById('content15').innerText = '1.Điều kiện đổi hàng';
+                var content14Element = document.getElementById('content14');
+                content14Element.innerText = '+ CHÍNH SÁCH ĐỔI SẢN PHẨM: ';
+                content14Element.style.fontWeight = 600;
+                var content15Element = document.getElementById('content15');
+                content15Element.innerText = '1. Điều kiện đổi hàng';
+                content15Element.style.fontWeight = 600;
                 document.getElementById('content16').innerText = '- Bạn lưu ý giữ lại hoá đơn để đổi hàng trong vòng 30 ngày.';
                 document.getElementById('content17').innerText = 'cơ thể. ';
                 document.getElementById('content17').innerText = '- Đối với mặt hàng giảm giá, phụ kiện cá nhân (áo lót, khẩu trang, vớ ...) không';
@@ -926,7 +974,9 @@
                 document.getElementById('content21').innerText = 'qua sử dụng, còn tag nhãn và hóa đơn mua hàng.)';
                 document.getElementById('content22').innerText ='- Bạn vui lòng gửi cho chúng mình clip đóng gói và hình ảnh của đơn hàng đổi trả';
                 document.getElementById('content23').innerText ='của bạn, nhân viên tư vấn sẽ xác nhận và tiến hành lên đơn đổi trả cho bạn.';
-                document.getElementById('content24').innerText ='2. Trường hợp khiếu nại';
+                var content24Element = document.getElementById('content24');
+                content24Element.innerText = '2. Trường hợp khiếu nại';
+                content24Element.style.fontWeight = 600;
                 document.getElementById('content25').innerText ='- Bạn phải có video unbox hàng';
                 document.getElementById('content26').innerText ='- Quay video rõ nét 6 mặt của gói hàng';
                 document.getElementById('content27').innerText ='- Quay rõ: Tên người nhận, mã đơn, địa chỉ, số điện thoại.';
@@ -956,6 +1006,7 @@
                  document.getElementById('name_title_product').innerText = 'Hoodie Degrey Is Us Kem HDIS';
                  document.getElementById('name-product').innerText = 'Hoodie Degrey Is Us Kem HDIS';
                  document.getElementById('pv_discount').innerText = '490.000đ';
+                 document.getElementById('discount_info_detail').innerText = '-9%';
                  document.getElementById('pv_price').innerText = '380.000đ';
                  document.getElementById('content1').innerText = '- Chất liệu: Chân Cua 350gsm';
                 document.getElementById('content2').innerText = '- Họa tiết: Được thêu trực tiếp lên sản phẩm';
@@ -970,8 +1021,12 @@
                 document.getElementById('content11').innerText = '- Không ủi trực tiếp lên hình in.';
                 document.getElementById('content12').innerText = '- Hạn chế sử dụng máy sấy và ủi (nếu có) chỉ nên ủi lên vải hoặc sử dụng bàn ủi hơi';
                 document.getElementById('content13').innerText = 'nước ở nhiệt độ thích hợp. ';
-                document.getElementById('content14').innerText = '+ CHÍNH SÁCH ĐỔI SẢN PHẨM: ';
-                document.getElementById('content15').innerText = '1.Điều kiện đổi hàng';
+                var content14Element = document.getElementById('content14');
+                content14Element.innerText = '+ CHÍNH SÁCH ĐỔI SẢN PHẨM: ';
+                content14Element.style.fontWeight = 600;
+                var content15Element = document.getElementById('content15');
+                content15Element.innerText = '1. Điều kiện đổi hàng';
+                content15Element.style.fontWeight = 600;
                 document.getElementById('content16').innerText = '- Bạn lưu ý giữ lại hoá đơn để đổi hàng trong vòng 30 ngày.';
                 document.getElementById('content17').innerText = 'cơ thể. ';
                 document.getElementById('content17').innerText = '- Đối với mặt hàng giảm giá, phụ kiện cá nhân (áo lót, khẩu trang, vớ ...) không';
@@ -981,13 +1036,15 @@
                 document.getElementById('content21').innerText = 'qua sử dụng, còn tag nhãn và hóa đơn mua hàng.)';
                 document.getElementById('content22').innerText ='- Bạn vui lòng gửi cho chúng mình clip đóng gói và hình ảnh của đơn hàng đổi trả';
                 document.getElementById('content23').innerText ='của bạn, nhân viên tư vấn sẽ xác nhận và tiến hành lên đơn đổi trả cho bạn.';
-                document.getElementById('content24').innerText ='2. Trường hợp khiếu nại';
+                var content24Element = document.getElementById('content24');
+                content24Element.innerText = '2. Trường hợp khiếu nại';
+                content24Element.style.fontWeight = 600;
                 document.getElementById('content25').innerText ='- Bạn phải có video unbox hàng';
                 document.getElementById('content26').innerText ='- Quay video rõ nét 6 mặt của gói hàng';
                 document.getElementById('content27').innerText ='- Quay rõ: Tên người nhận, mã đơn, địa chỉ, số điện thoại.';
                 document.getElementById('content28').innerText ='- Clip không cắt ghép, chỉnh sửa';
-                document.getElementById('content29').innerText ='- Degrey xin không tiếp nhận giải quyết các trường hợp không thỏa các điều kiện';
-                document.getElementById('content30').innerText ='trên.';
+                document.getElementById('content29').innerText ='- Degrey xin không tiếp nhận giải quyết các trường hợp không thỏa các điều kiện trên.';
+                document.getElementById('content30').innerText ='';
         }
 
         if (productId === '11') {
@@ -1013,6 +1070,7 @@
                  document.getElementById('name_title_product').innerText = 'Túi đeo chéo Degrey Coffee Simili Bag màu Kem nâu';
                  document.getElementById('name-product').innerText = 'Túi đeo chéo Degrey Coffee Simili Bag màu Kem nâu';
                  document.getElementById('pv_discount').innerText = '350.000đ';
+                 document.getElementById('discount_info_detail').innerText = '-9%';
                  document.getElementById('pv_price').innerText = '320.000đ';
                  document.getElementById('content1').innerText = '- Chất liệu: Simili';
                 document.getElementById('content2').innerText = '- Hoạ tiết: dập chìm logo';
@@ -1027,8 +1085,12 @@
                 document.getElementById('content11').innerText = '- Không giặt máy';
                 document.getElementById('content12').innerText = '- Sử dụng bàn chải có lông mềm';
                 document.getElementById('content13').innerText = '- Tuyệt đối không dùng bàn chải cước cứng sẽ gây ra các vết xước trên nền vải';
-                document.getElementById('content14').innerText = '+ CHÍNH SÁCH ĐỔI SẢN PHẨM: ';
-                document.getElementById('content15').innerText = '1.Điều kiện đổi hàng';
+                var content14Element = document.getElementById('content14');
+                content14Element.innerText = '+ CHÍNH SÁCH ĐỔI SẢN PHẨM: ';
+                content14Element.style.fontWeight = 600;
+                var content15Element = document.getElementById('content15');
+                content15Element.innerText = '1. Điều kiện đổi hàng';
+                content15Element.style.fontWeight = 600;
                 document.getElementById('content16').innerText = '- Bạn lưu ý giữ lại hoá đơn để đổi hàng trong vòng 30 ngày.';
                 document.getElementById('content17').innerText = 'cơ thể. ';
                 document.getElementById('content17').innerText = '- Đối với mặt hàng giảm giá, phụ kiện cá nhân (áo lót, khẩu trang, vớ ...) không';
@@ -1038,7 +1100,9 @@
                 document.getElementById('content21').innerText = 'qua sử dụng, còn tag nhãn và hóa đơn mua hàng.)';
                 document.getElementById('content22').innerText ='- Bạn vui lòng gửi cho chúng mình clip đóng gói và hình ảnh của đơn hàng đổi trả';
                 document.getElementById('content23').innerText ='của bạn, nhân viên tư vấn sẽ xác nhận và tiến hành lên đơn đổi trả cho bạn.';
-                document.getElementById('content24').innerText ='2. Trường hợp khiếu nại';
+                var content24Element = document.getElementById('content24');
+                content24Element.innerText = '2. Trường hợp khiếu nại';
+                content24Element.style.fontWeight = 600;
                 document.getElementById('content25').innerText ='- Bạn phải có video unbox hàng';
                 document.getElementById('content26').innerText ='- Quay video rõ nét 6 mặt của gói hàng';
                 document.getElementById('content27').innerText ='- Quay rõ: Tên người nhận, mã đơn, địa chỉ, số điện thoại.';
@@ -1065,11 +1129,12 @@
                 document.getElementById('size3').style.display='none';
                 document.getElementById('size4').style.display='none';
                 document.getElementById('size_').style.display='none';
-                
+
                 document.getElementById('first_title').innerText = 'phụ kiện'
                  document.getElementById('name_title_product').innerText = 'Cặp Degrey simili có quai đeo kiểu Nhật - CAPS';
                  document.getElementById('name-product').innerText = 'Cặp Degrey simili có quai đeo kiểu Nhật - CAPS';
                  document.getElementById('pv_discount').innerText = '500.000đ';
+                 document.getElementById('discount_info_detail').innerText = '-14%';
                  document.getElementById('pv_price').innerText = '430.000đ';
                  document.getElementById('content1').innerText = '- Chất liệu: Simili';
                 document.getElementById('content2').innerText = '- Hoạ tiết: dập chìm logo';
@@ -1084,8 +1149,12 @@
                 document.getElementById('content11').innerText = '- Không giặt máy';
                 document.getElementById('content12').innerText = '- Sử dụng bàn chải có lông mềm';
                 document.getElementById('content13').innerText = '- Tuyệt đối không dùng bàn chải cước cứng sẽ gây ra các vết xước trên nền vải';
-                document.getElementById('content14').innerText = '+ CHÍNH SÁCH ĐỔI SẢN PHẨM: ';
-                document.getElementById('content15').innerText = '1.Điều kiện đổi hàng';
+                var content14Element = document.getElementById('content14');
+                content14Element.innerText = '+ CHÍNH SÁCH ĐỔI SẢN PHẨM: ';
+                content14Element.style.fontWeight = 600;
+                var content15Element = document.getElementById('content15');
+                content15Element.innerText = '1. Điều kiện đổi hàng';
+                content15Element.style.fontWeight = 600;
                 document.getElementById('content16').innerText = '- Bạn lưu ý giữ lại hoá đơn để đổi hàng trong vòng 30 ngày.';
                 document.getElementById('content17').innerText = 'cơ thể. ';
                 document.getElementById('content17').innerText = '- Đối với mặt hàng giảm giá, phụ kiện cá nhân (áo lót, khẩu trang, vớ ...) không';
@@ -1095,7 +1164,9 @@
                 document.getElementById('content21').innerText = 'qua sử dụng, còn tag nhãn và hóa đơn mua hàng.)';
                 document.getElementById('content22').innerText ='- Bạn vui lòng gửi cho chúng mình clip đóng gói và hình ảnh của đơn hàng đổi trả';
                 document.getElementById('content23').innerText ='của bạn, nhân viên tư vấn sẽ xác nhận và tiến hành lên đơn đổi trả cho bạn.';
-                document.getElementById('content24').innerText ='2. Trường hợp khiếu nại';
+                var content24Element = document.getElementById('content24');
+                content24Element.innerText = '2. Trường hợp khiếu nại';
+                content24Element.style.fontWeight = 600;
                 document.getElementById('content25').innerText ='- Bạn phải có video unbox hàng';
                 document.getElementById('content26').innerText ='- Quay video rõ nét 6 mặt của gói hàng';
                 document.getElementById('content27').innerText ='- Quay rõ: Tên người nhận, mã đơn, địa chỉ, số điện thoại.';
@@ -1110,7 +1181,7 @@
                 document.getElementById('img_pd_3').src = 'product_img/product_13.2.jpg';
                 document.getElementById('img_pd_4').src = 'product_img/product_13.3.jpg';
                 document.getElementById('img_pd_5').style.display='none';
-    
+
 
                 document.querySelector('.imgslider1').src = 'product_img/product_13.jpg';
                 document.querySelector('.imgslider2').src = 'product_img/product_13.1.jpg';
@@ -1119,16 +1190,16 @@
     if (numberOfImages < 5) {
 
     for (let i = numberOfImages3 + 1; i <= 5; i++) {
-    document.getElementById(`imgpd${i}`).style.display = 'none'; 
-    document.querySelector(`.imgslider${i}`).style.display = 'none'; 
+    document.getElementById(`imgpd${i}`).style.display = 'none';
+    document.querySelector(`.imgslider${i}`).style.display = 'none';
     document.querySelector(`.lableslider_pd label:nth-child(${i})`).style.display = 'none';
    }
-  } 
+  }
 
                  document.getElementById('size1').innerText = 'S';
                  document.getElementById('size2').innerText = 'M';
-                 document.getElementById('size3').innerText='L';   
-                 document.getElementById('size4').style.display='none';            
+                 document.getElementById('size3').innerText='L';
+                 document.getElementById('size4').style.display='none';
 
                  document.getElementById('content1').innerText = '- Chất liệu: 250gsm, cotton 2 chiều';
                 document.getElementById('content2').innerText = '- Họa tiết: Được In lụa';
@@ -1143,8 +1214,12 @@
                 document.getElementById('content11').innerText = '- Không ủi trực tiếp lên hình in.';
                 document.getElementById('content12').innerText = '- Hạn chế sử dụng máy sấy và ủi (nếu có) chỉ nên ủi lên vải hoặc sử dụng bàn ủi hơi';
                 document.getElementById('content13').innerText = 'nước ở nhiệt độ thích hợp. ';
-                document.getElementById('content14').innerText = '+ CHÍNH SÁCH ĐỔI SẢN PHẨM: ';
-                document.getElementById('content15').innerText = '1.Điều kiện đổi hàng';
+                var content14Element = document.getElementById('content14');
+                content14Element.innerText = '+ CHÍNH SÁCH ĐỔI SẢN PHẨM: ';
+                content14Element.style.fontWeight = 600;
+                var content15Element = document.getElementById('content15');
+                content15Element.innerText = '1. Điều kiện đổi hàng';
+                content15Element.style.fontWeight = 600;
                 document.getElementById('content16').innerText = '- Bạn lưu ý giữ lại hoá đơn để đổi hàng trong vòng 30 ngày.';
                 document.getElementById('content17').innerText = 'cơ thể. ';
                 document.getElementById('content17').innerText = '- Đối với mặt hàng giảm giá, phụ kiện cá nhân (áo lót, khẩu trang, vớ ...) không';
@@ -1154,7 +1229,9 @@
                 document.getElementById('content21').innerText = 'qua sử dụng, còn tag nhãn và hóa đơn mua hàng.)';
                 document.getElementById('content22').innerText ='- Bạn vui lòng gửi cho chúng mình clip đóng gói và hình ảnh của đơn hàng đổi trả';
                 document.getElementById('content23').innerText ='của bạn, nhân viên tư vấn sẽ xác nhận và tiến hành lên đơn đổi trả cho bạn.';
-                document.getElementById('content24').innerText ='2. Trường hợp khiếu nại';
+                var content24Element = document.getElementById('content24');
+                content24Element.innerText = '2. Trường hợp khiếu nại';
+                content24Element.style.fontWeight = 600;
                 document.getElementById('content25').innerText ='- Bạn phải có video unbox hàng';
                 document.getElementById('content26').innerText ='- Quay video rõ nét 6 mặt của gói hàng';
                 document.getElementById('content27').innerText ='- Quay rõ: Tên người nhận, mã đơn, địa chỉ, số điện thoại.';
@@ -1165,6 +1242,7 @@
                  document.getElementById('name_title_product').innerText = 'Degrey.Madmonks Pockets Short-Sleeved Black Shirt - DMPS';
                  document.getElementById('name-product').innerText = 'Degrey.Madmonks Pockets Short-Sleeved Black Shirt - DMPS';
                  document.getElementById('pv_discount').innerText = '450.000đ';
+                 document.getElementById('discount_info_detail').innerText = '-36%';
                  document.getElementById('pv_price').innerText = '290.000đ';
         }
 
@@ -1203,8 +1281,12 @@
                 document.getElementById('content10').innerText = '- Không ủi trực tiếp lên hình in.';
                 document.getElementById('content11').innerText = '- Hạn chế sử dụng máy sấy và ủi (nếu có) chỉ nên ủi lên vải hoặc sử dụng bàn ủi hơi';
                 document.getElementById('content12').innerText = 'nước ở nhiệt độ thích hợp. ';
-                document.getElementById('content13').innerText = '+ CHÍNH SÁCH ĐỔI SẢN PHẨM: ';
-                document.getElementById('content14').innerText = '1.Điều kiện đổi hàng';
+                var content14Element = document.getElementById('content14');
+                content14Element.innerText = '+ CHÍNH SÁCH ĐỔI SẢN PHẨM: ';
+                content14Element.style.fontWeight = 600;
+                var content15Element = document.getElementById('content15');
+                content15Element.innerText = '1. Điều kiện đổi hàng';
+                content15Element.style.fontWeight = 600;
                 document.getElementById('content15').innerText = '- Bạn lưu ý giữ lại hoá đơn để đổi hàng trong vòng 30 ngày.';
                 document.getElementById('content16').innerText = 'cơ thể. ';
                 document.getElementById('content17').innerText = '- Đối với mặt hàng giảm giá, phụ kiện cá nhân (áo lót, khẩu trang, vớ ...) không';
@@ -1214,13 +1296,15 @@
                 document.getElementById('content21').innerText = 'qua sử dụng, còn tag nhãn và hóa đơn mua hàng.)';
                 document.getElementById('content22').innerText ='- Bạn vui lòng gửi cho chúng mình clip đóng gói và hình ảnh của đơn hàng đổi trả';
                 document.getElementById('content23').innerText ='của bạn, nhân viên tư vấn sẽ xác nhận và tiến hành lên đơn đổi trả cho bạn.';
-                document.getElementById('content24').innerText ='2. Trường hợp khiếu nại';
+                var content24Element = document.getElementById('content24');
+                content24Element.innerText = '2. Trường hợp khiếu nại';
+                content24Element.style.fontWeight = 600;
                 document.getElementById('content25').innerText ='- Bạn phải có video unbox hàng';
                 document.getElementById('content26').innerText ='- Quay video rõ nét 6 mặt của gói hàng';
                 document.getElementById('content27').innerText ='- Quay rõ: Tên người nhận, mã đơn, địa chỉ, số điện thoại.';
                 document.getElementById('content28').innerText ='- Clip không cắt ghép, chỉnh sửa';
-                document.getElementById('content29').innerText ='- Degrey xin không tiếp nhận giải quyết các trường hợp không thỏa các điều kiện';
-                document.getElementById('content30').innerText ='trên.';
+                document.getElementById('content29').innerText ='- Degrey xin không tiếp nhận giải quyết các trường hợp không thỏa các điều kiện trên.';
+                document.getElementById('content30').innerText ='';
         }
 
         if (productId === '15') {
@@ -1240,13 +1324,13 @@
                 document.getElementById('size2').innerText='2';
                 document.getElementById('size3').innerText='3';
                 document.getElementById('size4').innerText='4';
-               
+
 
                 document.getElementById('first_title').innerText = 'Phụ kiện'
-                 document.getElementById('name_title_product').innerText = 'Degrey.Madmonks Black  Mamba skinny - DMMP ';
-                 document.getElementById('name-product').innerText = 'Degrey.Madmonks Black  Mamba skinny - DMMP ';
-                 document.getElementById('pv_discount').innerText = '700.000đ';
-                 document.getElementById('pv_price').innerText = '580.000đ';
+                document.getElementById('name_title_product').innerText = 'Degrey.Madmonks Black  Mamba skinny - DMMP ';
+                document.getElementById('name-product').innerText = 'Degrey.Madmonks Black  Mamba skinny - DMMP ';
+                document.getElementById('pv_discount').innerText = '700.000đ';
+                document.getElementById('pv_price').innerText = '580.000đ';
                 document.getElementById('content1').innerText = '+ MÔ TẢ SẢN PHẨM:';
                 document.getElementById('content2').innerText = '- Đế đúc : Chất liệu TPR bền bỉ, có đặc tính giống cao su, có thể tái chế được và';
                 document.getElementById('content3').innerText = 'bảo vệ môi trường.';
@@ -1265,8 +1349,12 @@
                 document.getElementById('content16').innerText = 'Size 3 tương đương 40,41';
                 document.getElementById('content17').innerText = 'Size 4 tương đương 42,43';
                 document.getElementById('content18').innerText = 'Sản xuất và thiết kế bởi Team Degrey.';
-                document.getElementById('content19').innerText = '+ CHÍNH SÁCH ĐỔI SẢN PHẨM:';
-                document.getElementById('content20').innerText = '1.Điều kiện đổi hàng';
+                var content14Element = document.getElementById('content14');
+                content14Element.innerText = '+ CHÍNH SÁCH ĐỔI SẢN PHẨM: ';
+                content14Element.style.fontWeight = 600;
+                var content15Element = document.getElementById('content15');
+                content15Element.innerText = '1. Điều kiện đổi hàng';
+                content15Element.style.fontWeight = 600;
                 document.getElementById('content21').innerText = '- Bạn lưu ý giữ lại hoá đơn để đổi hàng trong vòng 30 ngày.';
                 document.getElementById('content22').innerText ='- Đối với mặt hàng giảm giá, phụ kiện cá nhân (áo lót, khẩu trang, vớ ...) không';
                 document.getElementById('content23').innerText ='nhận đổi hàng.';
@@ -1275,11 +1363,13 @@
                 document.getElementById('content26').innerText ='qua sử dụng, còn tag nhãn và hóa đơn mua hàng.)';
                 document.getElementById('content27').innerText ='- Bạn vui lòng gửi cho chúng mình clip đóng gói và hình ảnh của đơn hàng đổi trả';
                 document.getElementById('content28').innerText ='của bạn, nhân viên tư vấn sẽ xác nhận và tiến hành lên đơn đổi trả cho bạn.';
-                document.getElementById('content29').innerText ='2. Trường hợp khiếu nại';
+                var content24Element = document.getElementById('content24');
+                content24Element.innerText = '2. Trường hợp khiếu nại';
+                content24Element.style.fontWeight = 600;
                 document.getElementById('content30').innerText ='- Bạn phải có video unbox hàng , Quay video rõ nét 6 mặt của gói hàng';
         }
 
-        
+
     });
             </script>
 </body>
