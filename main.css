@@ -241,6 +241,10 @@ html {
   list-style-type: square;
 }
 
+.row .support a:hover {
+  color: #009bc1;
+}
+
 /* Care */
 .row .care {
   width: 20%;
