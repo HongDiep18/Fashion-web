@@ -1,142 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fashion</title>
-    <link rel="icon" href="./assets/image/icon-web1.png" type="image" sizes="16x16">
-    <link rel="stylesheet" href="main.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./assets/font/themify-icons/themify-icons.css">
-    <link rel="stylesheet" href="./assets/font/fontawesome-free-6.5.1-web/css/all.css">
-</head>
+    <link
+      rel="icon"
+      href="./assets/image/icon-web1.png"
+      type="image"
+      sizes="16x16"
+    />
+    <link rel="stylesheet" href="main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="./assets/font/themify-icons/themify-icons.css"
+    />
+    <link
+      rel="stylesheet"
+      href="./assets/font/fontawesome-free-6.5.1-web/css/all.css"
+    />
+  </head>
 
-<body>
+  <body>
     <div id="main">
-        <div id="header">
-            <div class="wrap-header" style="display: inline-flex;">
-                <div> <a href=""><img class="logo" src="assets/image/logo.webp" alt=""></a></div>
-                <ul id="nav">
-                    <li> <a href="">Trang chủ</a></li>
-                    <li> <a href="product.html">Sản phẩm</a></li>
-                    <li> <a href="store.html">Store</a></li>
-                    <li> <a href="Introduction.html">Giới thiệu</a></li>
+      <div id="header">
+        <div class="wrap-header" style="display: inline-flex">
+          <div>
+            <a href=""
+              ><img class="logo" src="assets/image/logo.webp" alt=""
+            /></a>
+          </div>
+          <ul id="nav">
+            <li><a href="">Trang chủ</a></li>
+            <li><a href="product.html">Sản phẩm</a></li>
+            <li><a href="store.html">Store</a></li>
+            <li><a href="Introduction.html">Giới thiệu</a></li>
+          </ul>
+          <div class="search-btn">
+            <a href="#"><i class="ti-search"></i></a>
+            <a href="#"><input type="text" /></a>
+          </div>
+
+          <div class="buy-btn">
+            <a href="#"><i class="ti-shopping-cart"></i></a>
+            <span class="buy-text">Giỏ hàng</span>
+          </div>
+        </div>
+      </div>
+
+      <div id="slider">
+        <div class="slider-images">
+          <input type="radio" name="inputslider" id="img1" />
+          <input type="radio" name="inputslider" id="img2" />
+          <input type="radio" name="inputslider" id="img3" />
+          <input type="radio" name="inputslider" id="img4" />
+
+          <img class="imgslider1" src="assets/image/1.webp" alt="img1" />
+          <img class="imgslider2" src="assets/image/2.webp" alt="img2" />
+          <img class="imgslider3" src="assets/image/1.webp" alt="img3" />
+          <img class="imgslider4" src="assets/image/2.webp" alt="img4" />
+        </div>
+        <div class="label-slider">
+          <label for="img1"></label>
+          <label for="img2"></label>
+          <label for="img3"></label>
+          <label for="img4"></label>
+        </div>
+      </div>
+      <div id="footer">
+        <div class="footer-content">
+          <div class="row">
+            <div class="padding-15 about">
+              <h4>Về DEGREY</h4>
+              <p>
+                Cái tên Degrey được tạo ra rất ngẫu hứng, xuất phát từ “Chuỗi
+                ngày u buồn về sự nghiệp, tương lai trong quá khứ của chính
+                mình” – theo lời chia sẻ của Degrey’s founder.
+              </p>
+              <p><b>CÔNG TY TNHH DEGREY</b></p>
+              <p>0315986019 cấp ngày 31/10/2019 tại Sở kế hoạch đầu tư TPHCM</p>
+              <div class="certifi-btn">
+                <a href="#">
+                  <img
+                    src="assets/image/certification.webp"
+                    alt="certification"
+                  />
+                </a>
+              </div>
+            </div>
+            <div class="padding-15 address">
+              <h4>Địa chỉ</h4>
+              <p><b>Sài Gòn:</b> 43 Huỳnh Văn Bánh P.17 Q.Phú Nhuận</p>
+              <p><b>Điện thoại:</b> 0336311117</p>
+              <p><b>Email:</b> degrey.vn@gmail.com</p>
+            </div>
+            <div class="padding-15 support">
+              <h4>Hỗ trợ khách hàng</h4>
+              <ul>
+                <li><a href="#">Giới thiệu Degrey</a></li>
+                <li><a href="#">Hệ thống cửa hàng</a></li>
+                <li><a href="#">Hướng dẫn đặt hàng</a></li>
+                <li><a href="#">Chính sách và quy định</a></li>
+                <li><a href="#">Chính sách bảo mật</a></li>
+                <li><a href="#">Thông tin sở hữu</a></li>
+              </ul>
+            </div>
+            <div class="padding-15 care">
+              <h4>Chăm sóc khách hàng</h4>
+              <div class="phone-contact">
+                <div class="icon-phone">
+                  <i
+                    class="fa-solid fa-phone-volume"
+                    style="color: #ffffff"
+                  ></i>
+                </div>
+                <div class="number-phone">
+                  <p>0336311117</p>
+                  <p>degrey.vn@gmail.com</p>
+                </div>
+              </div>
+              <h4>Follow Us</h4>
+              <div class="social-btn">
+                <ul>
+                  <li>
+                    <a href="#"><i class="ti-facebook"></i></a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="ti-twitter-alt"></i></a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="ti-instagram"></i></a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="ti-google"></i></a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="ti-youtube"></i></a>
+                  </li>
                 </ul>
-                <div class="search-btn">
-                    <a href="#"><i class=" ti-search"></i></a>
-                    <a href="#"><input type="text"></a>
-                </div>
-
-                <div class="buy-btn">
-                    <a href="#"><i class="ti-shopping-cart"></i></a>
-                    <span class="buy-text">Giỏ hàng</span>
-                </div>
+              </div>
             </div>
-
+          </div>
+          <div class="footer-copy">
+            <p>Copyright © 2024 DEGREY VIETNAM. Powered by Haravan</p>
+          </div>
         </div>
-
-        <div id="slider">
-            <div class="slider-images">
-                <input type="radio" name="inputslider" id="img1">
-                <input type="radio" name="inputslider" id="img2">
-                <input type="radio" name="inputslider" id="img3">
-                <input type="radio" name="inputslider" id="img4">
-
-                <img class="imgslider1" src="assets/image/1.webp" alt="img1">
-                <img class="imgslider2" src="assets/image/2.webp" alt="img2">
-                <img class="imgslider3" src="assets/image/1.webp" alt="img3">
-                <img class="imgslider4" src="assets/image/2.webp" alt="img4">
-
-            </div>
-            <div class="label-slider">
-                <label for="img1"></label>
-                <label for="img2"></label>
-                <label for="img3"></label>
-                <label for="img4"></label>
-            </div>
-        </div>
-        <div id="footer">
-            <div class="footer-content">
-                <div class="row">
-                    <div class="padding-15 about">
-                        <h4>Về DEGREY</h4>
-                        <p> Cái tên Degrey được tạo ra rất ngẫu hứng, xuất phát từ “Chuỗi ngày u buồn về sự nghiệp,
-                            tương
-                            lai
-                            trong quá khứ của chính mình” – theo lời chia sẻ của Degrey’s founder.
-                        </p>
-                        <p><b>CÔNG TY TNHH DEGREY</b></p>
-                        <p>0315986019 cấp ngày 31/10/2019 tại Sở kế hoạch đầu tư TPHCM
-                        <div class="certifi-btn">
-                            <a href="#">
-                                <img src="assets/image/certification.webp" alt="certification">
-                            </a>
-                        </div>
-                    </div>
-                    </p>
-                    <div class="padding-15 address">
-                        <h4>Địa chỉ</h4>
-                        <p><b>Sài Gòn:</b>
-                            43 Huỳnh Văn Bánh P.17 Q.Phú Nhuận
-                        <p><b>Điện thoại:</b> 0336311117</p>
-                        <p><b>Email:</b> degrey.vn@gmail.com</p>
-                        </p>
-                    </div>
-                    <div class="padding-15 support">
-                        <h4>Hỗ trợ khách hàng</h4>
-                        <ul>
-                            <li><a href="#">Giới thiệu Degrey</a> </li>
-                            <li><a href="#">Hệ thống cửa hàng</a></li>
-                            <li><a href="#">Hướng dẫn đặt hàng</a></li>
-                            <li><a href="#">Chính sách và quy định</a></li>
-                            <li><a href="#">Chính sách bảo mật</a></li>
-                            <li><a href="#">Thông tin sở hữu</a></li>
-                        </ul>
-
-                    </div>
-                    <div class="padding-15 care">
-                        <h4>Chăm sóc khách hàng</h4>
-                        <div class="phone-contact">
-                            <div class="icon-phone">
-                                <i class="fa-solid fa-phone-volume" style="color: #ffffff;"></i>
-                            </div>
-                            <div class="number-phone">
-                                <p>0336311117</p>
-                                <p>degrey.vn@gmail.com</p>
-                            </div>
-                        </div>
-                        <h4>Follow Us</h4>
-                        <div class="social-btn">
-                            <ul>
-                                <li>
-                                    <a href="#"><i class="ti-facebook"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="ti-twitter-alt"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="ti-instagram"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="ti-google"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="ti-youtube"></i></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="footer-copy">
-                    <p style="color: aliceblue;">Copyright © 2024 DEGREY VIETNAM. Powered by Haravan</p>
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
-</body>
-
+  </body>
 </html>
