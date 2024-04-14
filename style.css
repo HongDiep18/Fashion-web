@@ -528,7 +528,7 @@ input {
   align-items: center;
 }
 
-input[type="text"] {
+.quantity input[type="text"] {
   height: 40px;
   width: 70px;
   text-align: center;
