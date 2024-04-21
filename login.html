@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>STORE - Login</title>
+    <link
+      rel="icon"
+      href="./assets/image/icon-web1.png"
+      type="image"
+      sizes="16x16"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <style>
+      body {
+        background-color: #f8f9fd;
+      }
+
+      #form-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      form {
+        width: 400px;
+        height: 440px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0px 10px 34px -15px grey;
+      }
+
+      .login-logo {
+        text-align: center;
+        margin-top: 15px;
+      }
+
+      .login-logo i {
+        font-size: 60px;
+        color: #8d448b;
+      }
+
+      #title {
+        text-align: center;
+        color: #ed7c3b;
+      }
+
+      .form-control {
+        background: rgba(0, 0, 0, 0.05);
+        height: 48px;
+      }
+
+      .error-message {
+        color: red;
+        display: block;
+      }
+      label {
+        font-weight: bold;
+      }
+
+      button {
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="form-container">
+      <form name="FDN" method="post">
+        <div class="login-logo">
+          <i class="fa fa-user-circle-o"></i>
+        </div>
+
+        <h3 id="title">LOGIN</h3>
+
+        <div class="form-group col-md-12">
+          <label for="Email">Email</label>
+          <input
+            type="text"
+            class="form-control"
+            name="Email"
+            id="Email"
+            placeholder="Nhập Email"
+            pattern="[a-z0-9._%+-] +@[a-z0-9.-]+\.[a-z]{2,}"
+          />
+          <span class="error-message" id="EmailError"></span>
+        </div>
+
+        <div class="form-group col-md-12">
+          <label for="Password">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            name="Password"
+            id="Password"
+            placeholder="Nhập Password"
+          />
+          <span class="error-message" id="PasswordError"></span>
+        </div>
+
+        <br />
+
+        <button
+          type="button"
+          class="btn btn-primary btn-lg btn-block col-md-11"
+          onclick="KiemTra()"
+        >
+          Đăng nhập
+        </button>
+      </form>
+    </div>
+
+    <script>
+      function KiemTra() {
+        var flag = true;
+
+        var email = document.getElementById("Email").value.trim();
+        var mailFormat =
+          /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zAZ0-9-]+)*$/;
+
+        if (!mailFormat.test(email)) {
+          flag = false;
+          document.getElementById("EmailError").innerHTML =
+            "Vui lòng kiểm tra lại Email!";
+        } else {
+          document.getElementById("EmailError").innerHTML = "";
+        }
+
+        var Pass = document.getElementById("Password").value.trim();
+        if (Pass == "" || Pass.length < 10) {
+          flag = false;
+          document.getElementById("PasswordError").innerHTML =
+            "Kiểm tra lại Pass phải từ 10 ký tự!";
+        } else {
+          document.getElementById("PasswordError").innerHTML = "";
+        }
+
+        if (flag == true) {
+          window.location.href = "index.html";
+        }
+      }
+
+      document.addEventListener("keypress", function (e) {
+        if (e.key === "Enter") {
+          KiemTra();
+        }
+      });
+    </script>
+  </body>
+</html>
