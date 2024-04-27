@@ -3,6 +3,53 @@
   margin: 0;
   box-sizing: border-box;
 }
+* reponsive header */
+/* icon*/
+#check{
+  display:none;
+}
+/*icons menu */
+.mobile-icons{
+  cursor: pointer;
+  padding-top: 1%;
+  margin-left: 2%;
+  position: absolute;
+  font-size: 25px;
+  display: none;
+}
+
+/* search */
+.mobile-search-btn {
+  margin-left: 83%;
+  position: absolute;
+  font-size: 30px;
+  display: none;
+}
+
+.mobile-search-btn a{
+  color: #000;
+  text-decoration: none;
+}
+/* buy */
+.mobile-buy-btn{
+  margin-left: 92%;
+  position: absolute;
+  font-size: 30px;
+  display: none;
+}
+
+.mobile-buy-btn a{
+  color: #000;
+  text-decoration: none;
+}
+
+/* reponsive footer */
+.introducing_dg p ,
+.client-support p,
+.client-care p,
+.time-word{
+    display:none;
+}
 
 html {
   font-family: "Quicksand", sans-serif;
