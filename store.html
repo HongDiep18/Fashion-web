@@ -7,6 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" href="./assets/image/icon-web1.png" type="image" sizes="16x16">
 <link rel="stylesheet" href="main.css">
+<link rel="stylesheet" href="reponsive.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
@@ -124,27 +125,48 @@
 <body>
     <div>
         <div id="header">
-            <div class="wrap-header" style="display: inline-flex;">
-                <div> <a href=""><img class="logo" src="assets/image/logo.webp" alt=""></a></div>
-                <ul id="nav">
-                    <li> <a href="index.html">Trang chủ</a></li>
-                    <li> <a href="product.html">Sản phẩm</a></li>
-                    <li> <a href="store.html">Store</a></li>
-                    <li> <a href="Introduction.html">Giới thiệu</a></li>
-                </ul>
-
-                <div class="search-btn">
-                    <a href="#"><i class=" ti-search"></i></a>
-                    <input type="text" placeholder="Nhập sản phẩm tìm kiếm"/>
-                </div>
-
-                <div class="buy-btn">
-                    <a href="#"><i class="ti-shopping-cart"></i></a>
-                    <span class="buy-text">Giỏ hàng</span>
-                </div>
+            <div class="wrap-header" style="display: inline-flex">
+    
+             <!--reponsive icon menu-->
+              <input type="checkbox" id="check">
+              <label for="check" class="mobile-icons">
+                  <i class="ti-menu" id="menu-icon"></i>
+                  <i class="ti-close" id="close-icon"></i>
+              </label>
+      
+              <div>
+                <a href=""
+                  ><img class="logo" src="assets/image/logo.webp" alt=""
+                /></a>
+              </div>
+              <ul id="nav">
+                <li><a href="index.html">Trang chủ</a></li>
+                <li><a href="product.html">Sản phẩm</a></li>
+                <li><a href="store.html">Store</a></li>
+                <li><a href="Introduction.html">Giới thiệu</a></li>
+              </ul>
+              <div class="search-btn">
+                <a href="#"><i class="ti-search"></i></a>
+                <input type="text" placeholder="Nhập sản phẩm tìm kiếm"/>
+              </div>
+    
+              <!--reponsive search -->
+              <div class="mobile-search-btn">
+              <a href="#"> <i class="ti-search"></i></a>
+              </div>
+    
+    
+              <div class="buy-btn">
+                <a href="#"><i class="ti-shopping-cart"></i></a>
+                <span class="buy-text">Giỏ hàng</span>
+              </div>
+    
+               <!-- reponsive buy -->
+              <div class="mobile-buy-btn">
+                <a href="#"><i class="ti-shopping-cart"></i></a>
+              </div>
             </div>
-
-        </div>
+          </div>
 
         <div id="V1">
             <p>
@@ -200,81 +222,125 @@
             <img src="store_img/logo-lazada-vector-11.jpg" style="height: 20px">
             <a href="https://www.lazada.vn/shop/degrey-vietnam/">https://www.lazada.vn/shop/degrey-vietnam/</a>
         </div>
-        <div id="footer">
+          <div id="footer">
             <div class="footer-content">
-                <div class="row">
-                    <div class="padding-15 about">
-                        <h4>Về DEGREY</h4>
-                        <p> Cái tên Degrey được tạo ra rất ngẫu hứng, xuất phát từ “Chuỗi ngày u buồn về sự nghiệp,
-                            tương
-                            lai
-                            trong quá khứ của chính mình” – theo lời chia sẻ của Degrey’s founder.
-                        </p>
-                        <p><b>CÔNG TY TNHH DEGREY</b></p>
-                        <p>0315986019 cấp ngày 31/10/2019 tại Sở kế hoạch đầu tư TPHCM</p>
-                        <div class="certifi-btn">
-                            <a href="#">
-                                <img src="assets/image/certification.webp" alt="certification">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="padding-15 address">
-                        <h4>Địa chỉ</h4>
-                        <p><b>Sài Gòn:</b>
-                            43 Huỳnh Văn Bánh P.17 Q.Phú Nhuận</p>
-                        <p><b>Điện thoại:</b> 0336311117</p>
-                        <p><b>Email:</b> degrey.vn@gmail.com</p>
-                    </div>
-                    <div class="padding-15 support">
-                        <h4>Hỗ trợ khách hàng</h4>
-                        <ul>
-                            <li><a href="Introduction.html">Giới thiệu Degrey</a> </li>
-                            <li><a href="store.html">Hệ thống cửa hàng</a></li>
-                            <li><a href="order-turtorial.html">Hướng dẫn đặt hàng</a></li>
-                            <li><a href="#">Chính sách và quy định</a></li>
-                            <li><a href="#">Chính sách bảo mật</a></li>
-                            <li><a href="#">Thông tin sở hữu</a></li>
-                        </ul>
-
-                    </div>
-                    <div class="padding-15 care">
-                        <h4>Chăm sóc khách hàng</h4>
-                        <div class="phone-contact">
-                            <div class="icon-phone">
-                                <i class="fa-solid fa-phone-volume" style="color: #ffffff;"></i>
-                            </div>
-                            <div class="number-phone">
-                                <p>0336311117</p>
-                                <p>degrey.vn@gmail.com</p>
-                            </div>
-                        </div>
-                        <h4>Follow Us</h4>
-                        <div class="social-btn">
-                            <ul>
-                                <li>
-                                    <a href="#"><i class="ti-facebook"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="ti-twitter-alt"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="ti-instagram"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="ti-google"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="ti-youtube"></i></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
+              <div class="row">
+                <!--reponsive -->
+                <div class="time-word ">
+                  <div class="left-tw ">
+                      <p>Bán hàng 9:00 - 22:00</p>  
+                      <a href=""><i
+                         class="fa-solid fa-phone-volume"
+                      ></i>03363111117</a>
+                  </div>
+                  
+                  <div class="mid-tw">
+                      <p>Khiếu nại 9:00 - 21:30</p>  
+                      <a href=""><i
+                        class="fa-solid fa-phone-volume"
+                      ></i>0775913335</a>
+                  </div>
+                  <div class="right-tw" onclick="toggleInfo('introducing_dg');toggleInfo('client-support');toggleInfo('client-care')">
+                      <p>Xem thêm<br> Thông tin</p>
+                      <a href=""><i  class="ti-angle-down"></i></a>
+                   </div>
                 </div>
-                <div class="footer-copy">
-                    <p>Copyright © 2024 DEGREY VIETNAM. Powered by Haravan</p>
+    
+                <div class="introducing_dg"  id="introducing_dg" onclick="toggleInfo('about');toggleInfo('address')"><p>Về DEGREY</p>  </div>
+                <div class="padding-15 about content" id="about">
+                  <h4 >Về DEGREY</h4>
+                  <p>
+                    Cái tên Degrey được tạo ra rất ngẫu hứng, xuất phát từ “Chuỗi
+                    ngày u buồn về sự nghiệp, tương lai trong quá khứ của chính
+                    mình” – theo lời chia sẻ của Degrey’s founder.
+                  </p>
+                  <p><b>CÔNG TY TNHH DEGREY</b></p>
+                  <p>0315986019 cấp ngày 31/10/2019 tại Sở kế hoạch đầu tư TPHCM</p>
+                  <div class="certifi-btn">
+                    <a href="#">
+                      <img
+                        src="assets/image/certification.webp"
+                        alt="certification"
+                      />
+                    </a>
+                  </div>
                 </div>
+                <div class="padding-15 address " id="address">
+                  <h4>Địa chỉ</h4>
+                  <p><b>Sài Gòn:</b> 43 Huỳnh Văn Bánh P.17 Q.Phú Nhuận</p>
+                  <p><b>Điện thoại:</b> 0336311117</p>
+                  <p><b>Email:</b> degrey.vn@gmail.com</p>
+                </div>
+            
+    
+                <div class="client-support"  id="client-support" onclick="toggleInfo('support')"> <p>Hỗ trợ khách hàng</p>  </div>
+                <div class="padding-15 support" id="support">
+                  <h4>Hỗ trợ khách hàng</h4>
+                  <ul>
+                    <li><a href="Introduction.html">Giới thiệu Degrey</a></li>
+                    <li><a href="store.html">Hệ thống cửa hàng</a></li>
+                    <li><a href="order-turtorial.html">Hướng dẫn đặt hàng</a></li>
+                    <li><a href="#">Chính sách và quy định</a></li>
+                    <li><a href="#">Chính sách bảo mật</a></li>
+                    <li><a href="#">Thông tin sở hữu</a></li>
+                  </ul>
+                </div>
+            
+    
+                <div class="client-care"  id="client-care" onclick="toggleInfo('care')"> <p>Chăm sóc khách hàng</p></div>
+                <div class="padding-15 care" id="care">
+                  <h4>Chăm sóc khách hàng</h4>
+                  <div class="phone-contact">
+                    <div class="icon-phone">
+                      <i
+                        class="fa-solid fa-phone-volume"
+                        style="color: #ffffff"
+                      ></i>
+                    </div>
+                    <div class="number-phone">
+                      <p>0336311117</p>
+                      <p>degrey.vn@gmail.com</p>
+                    </div>
+                  </div>
+                  <h4>Follow Us</h4>
+                  <div class="social-btn">
+                    <ul>
+                      <li>
+                        <a href="#"><i class="ti-facebook"></i></a>
+                      </li>
+                      <li>
+                        <a href="#"><i class="ti-twitter-alt"></i></a>
+                      </li>
+                      <li>
+                        <a href="#"><i class="ti-instagram"></i></a>
+                      </li>
+                      <li>
+                        <a href="#"><i class="ti-google"></i></a>
+                      </li>
+                      <li>
+                        <a href="#"><i class="ti-youtube"></i></a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+    
+              <div class="footer-copy">
+                <p>Copyright © 2024 DEGREY VIETNAM. Powered by Haravan</p>
+              </div>
             </div>
-    </div>
+          </div>
+         
+          <script>
+            function toggleInfo(id) {
+            var info_footer = document.getElementById(id);
+            info_footer.classList.toggle('show');
+            if (info_footer.classList.contains('show')) {
+              info_footer.style.height = info_footer.scrollHeight + 'px';
+            } else {
+              info_footer.style.height = 0;
+            }
+        }
+           </script>
 </body>
 </html>
