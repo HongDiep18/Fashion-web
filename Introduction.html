@@ -325,5 +325,16 @@
               </div>
             </div>
           </div>
+          <script>
+            function toggleInfo(id) {
+            var info_footer = document.getElementById(id);
+            info_footer.classList.toggle('show');
+            if (info_footer.classList.contains('show')) {
+              info_footer.style.height = info_footer.scrollHeight + 'px';
+            } else {
+              info_footer.style.height = 0;
+            }
+        }
+           </script>
 </body>
 </html>
