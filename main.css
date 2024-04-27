@@ -3,7 +3,8 @@
   margin: 0;
   box-sizing: border-box;
 }
-* reponsive header */
+
+/* reponsive header */
 /* icon*/
 #check{
   display:none;
@@ -51,13 +52,15 @@
     display:none;
 }
 
+
+
 html {
   font-family: "Quicksand", sans-serif;
   scroll-behavior: smooth;
 }
 
 #main {
-  height: 2000px;
+  height: auto;
 }
 
 .btn {
@@ -301,7 +304,7 @@ html {
   display: flex;
 }
 
-.care .phone-contact .icon-phone {
+.care .phone-contact .hone icon-p{
   width: 18%;
 }
 
@@ -348,3 +351,4 @@ html {
   color: aliceblue;
   font-weight: bold;
 }
+
