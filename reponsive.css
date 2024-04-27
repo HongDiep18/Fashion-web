@@ -1,0 +1,254 @@
+
+/* màn hình vừa  */
+@media only screen and (max-width: 980px) {
+    #main {
+        height: auto;
+      }
+
+    /* reponsive header */
+    /* menu and close */
+    .mobile-icons{
+        display:block;
+    }
+
+    .mobile-icons #close-icon{
+        display:none;
+    }
+
+    #check:checked~.mobile-icons #menu-icon{
+        display:none;
+    }
+
+    #check:checked~.mobile-icons #close-icon{
+        display:block;
+    }
+
+    /* logo */
+    .logo{
+        margin-left: 56%;
+        padding-top: 8%;
+        display: block;
+    }
+
+    /* mobile-search */
+    .mobile-search-btn{
+        display:block;
+      }
+    #check:checked~ .mobile-search-btn{
+        display: none;
+    }
+    .search-btn input[type="text"]{
+        display : none;
+    }
+
+    /* mobile-buy */
+    .mobile-buy-btn {
+        display:block;
+    }
+    .buy-btn{
+        display : none;
+    }
+
+    #check:checked~ .mobile-buy-btn{
+        display: none;
+    }
+    /*tieude */
+    #nav  {
+        display: block;
+        height:0px;
+        transition: .3s ease;
+        overflow: hidden;
+        font-size: 1.1rem;
+        margin: 1.5rem 0;
+        text-align: center;
+        margin-left: -84px;
+        margin-right: -10px;
+        width: 100%;    
+        padding-top :250px;
+    }
+    #nav li a {
+       line-height: 60px ;
+    }
+
+    #nav li a:hover {
+        border-bottom:none;
+     }
+
+    #check:checked~ #nav{
+        background-color: whitesmoke;
+        height:490px;
+    }
+
+    /* footer */
+
+    .row{
+        width:100%;
+        height:auto;
+        min-width: 450px;
+        padding: 10px 0 30px;
+        display: block;
+    }
+
+    /* time-word */
+
+    .time-word{
+        display: flex;
+        width: 100%;
+    } 
+
+    .left-tw,
+    .mid-tw{
+        width: 33%;
+        align-items: center;
+        text-align: center;
+    }
+
+    .left-tw p,
+    .mid-tw p{
+        font-size: 12px;
+    }
+
+    .right-tw p{
+        display: inline-flex;
+        font-size: 12px;
+    }
+
+    .left-tw a,
+    .mid-tw a,
+    .right-tw a{
+        font-size: 12px;
+        text-decoration: none;
+        color: #fff;
+        font-weight: bold;
+    }
+
+    .left-tw a i,
+    .mid-tw a i{
+        margin-right: 5px;
+    }
+
+    .right-tw {
+        width: 33%;
+        align-items: center;
+        text-align: center;
+        cursor: pointer;   
+        display:block;
+    }
+    /* xem thêm */
+    .introducing_dg,
+    .client-support,
+    .client-care{
+        display: none;
+    }
+
+    .introducing_dg.show,
+    .client-support.show,
+    .client-care.show{
+        display:block;
+    }    
+
+    /* ẩn tiêu đề */
+    .padding-15.support h4,
+    .padding-15.about h4,
+    .padding-15.care h4{
+        display: none;
+    }
+
+    .introducing_dg p,
+    .client-support p,
+    .client-care p {
+        display: block;
+        font-size: 15px;
+        color: grey;
+    }
+
+    .introducing_dg,
+    .client-support,
+    .client-care {
+        padding-top: 1%;
+        width:97%;
+        margin: 0 auto;
+        display: none;
+        cursor: pointer;    
+        position: relative;
+    }
+
+    .client-support,
+    .introducing_dg{
+        border-bottom: 1px solid grey;
+    }
+
+    /* giới thiệu */
+    .padding-15.about{
+        display:none;
+        width: 45%;
+        top: 100%;
+        left: 0;
+        box-sizing: border-box;
+        padding: 10px;
+    }
+
+    /* địa chỉ */
+    .padding-15.address{
+        display:none;
+        width: 48%;
+        float: right;
+        top: 100%;
+        box-sizing: border-box;
+    }
+
+    /* logo */
+    .certifi-btn{
+        display:none;
+        font-size: 15px;
+    }
+
+    /* hỗ trợ */
+    .padding-15.support{
+        display:none;
+        width: 50%;
+        margin-left: 2%;
+        top: 100%;
+        box-sizing: border-box;
+        padding: 10px;
+    } 
+
+     /* chăm sóc */
+    .padding-15.care{
+        display:none;
+        padding: 10px;
+    }
+    
+      .icon-phone{
+        padding-top: 16px;
+        margin-left: 5%;
+        margin-right: 25%;
+    }
+
+    .social-bt,
+    .number-phone p{
+       font-size: 15px;
+       padding-top: 5px;
+       padding-bottom: 10px;
+    }
+
+    .client-care ul{
+        list-style: none;
+    }
+
+    .certifi-btn,
+    .padding-15.address.show,
+    .padding-15.support.show,
+    .padding-15.care.show,
+    .padding-15.about.show{
+        display:inline-block;
+    }    
+
+    /* cuối */
+    .footer-copy{
+        display:block;
+        font-size: 11px;
+        margin-top: -20px;
+        margin-bottom:-25px;
+    }
+}
