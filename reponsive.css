@@ -251,4 +251,147 @@
         margin-top: -20px;
         margin-bottom:-25px;
     }
+      /* REPONSIVE TRANG SẢN PHẨM */
+ 
+   #filtet_title_frame {
+    cursor: pointer;   
+    border: 1px solid grey; 
+    display: block;
+    width:562%;
+    height: 40px;
+    padding-top: 10px;
+    padding-left: 5px;
+   }
+
+   .dropdown1 i,
+   .dropdown2 i,
+   .dropdown1,
+   .dropdown2{
+    display : none;
+   }
+   .dropdown1.show,
+   .dropdown2.show{
+    display: block;
+    width: 82%;
+    margin-left: 9%;
+    border: none;
+    cursor : pointer;
+}   
+.dropdown-content2,
+.dropdown-content1 {
+    width: 82%;
+    margin-top: 3%;  
+}
+
+.dropdown{
+   padding-top: 90px;
+   height: 40px;
+   margin-left: -27%;
+}
+
+.dropdown-content {
+    position : absolute;
+    margin-left:-1%;
+    width: 200%;
+    color: white;
+    border: none;
+}
+
+.sort{
+    width: 210%;
+    height: 40px;
+    border: 1px solid black;
+}
+
+.sort i {
+    display: none;
+}
+/* product content */
+.left {
+    margin: 0;
+    width: 100%;
+    padding-top: 110px;
+    font-size: 13px;
+  }
+
+.right {
+    margin: 0;
+    width: 100%;
+  }
+
+#product_information{
+    padding-top: 40px;
+    float: left;
+    width: 100%;
+  }
+  
+  #price_pd {
+    color: red;
+    font-weight: bold;
+    float: left;
+    font-size: 20px;
+  }
+
+  #discount_pd {
+    color: grey;
+    text-decoration: line-through;
+    font-size: 15px;
+    margin-right: 10px;
+  }
+
+  #discount_info {
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+    color: white;
+    font-size: 15px;
+    background-color: #f94c43;
+    margin-right: 10px;
+  }
+
+
+.quantity input[type="text"] {
+    height: 40px;
+    width: 50%;
+    text-align: center;
+    margin-right: 0;
+    border: 1px solid whitesmoke;
+  }
+
+  .button_effect {
+    width: 100%;
+    height: 40px;
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    border: 2px;
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+    background-color: darkgray;
+    padding-top: 8px;
+    text-align: center;
+    margin-left: 20px;
+  }
+
+  .relatedp {
+    margin: 0 auto; 
+    width: 90%;
+    padding-top: 20px;
+    z-index: 2;
+    overflow: hidden;
+  }
+
+.relatedp-products img {
+    margin: 0 auto;
+    float: left;
+    width: 98%;
+  }
+  .relatedp hr{
+    display: none;
+  }
+
+  .relatedp-products {
+    width: 98%;
+  }
 }
