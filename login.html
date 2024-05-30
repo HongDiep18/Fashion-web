@@ -79,6 +79,25 @@
       button {
         margin: 0 auto;
       }
+      .login-register 
+    {
+        position: absolute;
+        top: 10px; /* Điều chỉnh vị trí theo y */
+        right: calc(20px - 0.5cm); /* Cách giỏ hàng 1cm */
+    }
+
+    .login-register a 
+    {
+        text-decoration: none;
+        color: #000;
+        margin-right: 10px;
+    }
+
+    .login-register span 
+    {
+          margin-right: 10px;
+          color: #000;
+    }
     </style>
   </head>
 
@@ -125,6 +144,11 @@
         >
           Đăng nhập
         </button>
+
+        <!-- Thêm phần tử HTML để hiển thị thông báo thành công -->
+        <div id="successMessage" class="mt-3 text-success" style="display: none;">
+          Đăng nhập thành công!
+        </div>
       </form>
     </div>
 
@@ -153,7 +177,10 @@
           document.getElementById("PasswordError").innerHTML = "";
         }
 
+        // Kiểm tra đăng nhập thành công và hiển thị thông báo tương ứng
         if (flag == true) {
+          document.getElementById("successMessage").style.display = "block";
+          // Chuyển hướng đến trang chủ sau khi đăng nhập thành công
           window.location.href = "index.html";
         }
       }
