@@ -17,7 +17,6 @@
 <style>
     #V1
     {
-
         float: left;
         width: 60%;
         margin-top: 100px;
@@ -118,41 +117,167 @@
         text-decoration: none ;
         color: black;
     }
-        .login-register 
+        .login-register
     {
         position: absolute;
         top: 10px; /* Điều chỉnh vị trí theo y */
         right: calc(20px - 0.5cm); /* Cách giỏ hàng 1cm */
     }
 
-    .login-register a 
+    .login-register a
     {
         text-decoration: none;
         color: #000;
         margin-right: 10px;
     }
 
-    .login-register span 
+    .login-register span
     {
           margin-right: 10px;
           color: #000;
     }
 
+/* Màn hình nhỏ */
+@media only screen and (max-width: 740px) {
+  #V1 {
+    clear:both;
+    margin-left: 10px;
+    width: 100%;
+  }
+    #V1 p
+    {
+        margin-left: 10px;
+    }
+    #V1 a
+    {
+        margin-left: 10px;
+    }
+    #V1 h1
+    {
+        margin-left: 10px;
+    }
 
+    video {
+    margin-left: 10px;
+    width: 20%;
+   }
+
+  #V4 {
+    margin-left: 20px;
+    font-size: 15px;
+  }
+
+    #V2
+    {
+        clear:both;
+    }
+    #V2 h3
+    {
+      margin-left: -250px;
+    }
+    #V2 a
+    {
+      margin-left: -250px;
+    }
+    #V2 img {
+      margin-left: -250px;
+    }
+    #V2 hr
+    {
+        margin-left: -250px;
+    }
+
+     #map {
+    margin-left: 50px;
+  }
+  #map iframe
+    {
+        width: 88%;
+    }
+
+    #V4
+    {
+        margin-left: 50px;
+    }
+}
+
+ /* Màn hình vừa  */
+      @media only screen and (min-width: 740px) and (max-width: 1024px) {
+     #V1 {
+    clear:both;
+    margin-left: 10px;
+    width: 100%;
+  }
+    #V1 p
+    {
+        margin-left: 10px;
+    }
+    #V1 a
+    {
+        margin-left: 10px;
+    }
+    #V1 h1
+    {
+        margin-left: 10px;
+    }
+
+    video {
+    margin-left: 10px;
+    width: 20%;
+   }
+
+  #V4 {
+    margin-left: 20px;
+    font-size: 15px;
+  }
+
+    #V2
+    {
+        clear:both;
+    }
+    #V2 h3
+    {
+      margin-left: -250px;
+    }
+    #V2 a
+    {
+      margin-left: -250px;
+    }
+    #V2 img {
+      margin-left: -250px;
+    }
+    #V2 hr
+    {
+        margin-left: -250px;
+    }
+
+     #map {
+    margin-left: 30px;
+  }
+  #map iframe
+    {
+        width: 100%;
+    }
+
+    #V4
+    {
+        margin-left: 160px;
+    }
+      }
 </style>
 
 <body>
     <div>
         <div id="header">
             <div class="wrap-header" style="display: inline-flex">
-    
+
              <!--reponsive icon menu-->
               <input type="checkbox" id="check">
               <label for="check" class="mobile-icons">
                   <i class="ti-menu" id="menu-icon"></i>
                   <i class="ti-close" id="close-icon"></i>
               </label>
-      
+
               <div>
                 <a href=""
                   ><img class="logo" src="assets/image/logo.webp" alt=""
@@ -166,20 +291,20 @@
               </ul>
               <div class="search-btn">
                 <a href="#"><i class="ti-search"></i></a>
-                
+
               </div>
-    
+
               <!--reponsive search -->
               <div class="mobile-search-btn">
               <a href="#"> <i class="ti-search"></i></a>
               </div>
-    
-    
+
+
               <div class="buy-btn">
                 <a href="#"><i class="ti-shopping-cart"></i></a>
                 <span class="buy-text">Giỏ hàng</span>
               </div>
-    
+
                <!-- reponsive buy -->
               <div class="mobile-buy-btn">
                 <a href="#"><i class="ti-shopping-cart"></i></a>
@@ -248,20 +373,21 @@
             <img src="store_img/logo-lazada-vector-11.jpg" style="height: 20px">
             <a href="https://www.lazada.vn/shop/degrey-vietnam/">https://www.lazada.vn/shop/degrey-vietnam/</a>
         </div>
+
           <div id="footer">
             <div class="footer-content">
               <div class="row">
                 <!--reponsive -->
                 <div class="time-word ">
                   <div class="left-tw ">
-                      <p>Bán hàng 9:00 - 22:00</p>  
+                      <p>Bán hàng 9:00 - 22:00</p>
                       <a href=""><i
                          class="fa-solid fa-phone-volume"
                       ></i>03363111117</a>
                   </div>
-                  
+
                   <div class="mid-tw">
-                      <p>Khiếu nại 9:00 - 21:30</p>  
+                      <p>Khiếu nại 9:00 - 21:30</p>
                       <a href=""><i
                         class="fa-solid fa-phone-volume"
                       ></i>0775913335</a>
@@ -271,7 +397,7 @@
                       <a href=""><i  class="ti-angle-down"></i></a>
                    </div>
                 </div>
-    
+
                 <div class="introducing_dg"  id="introducing_dg" onclick="toggleInfo('about');toggleInfo('address')"><p>Về DEGREY</p>  </div>
                 <div class="padding-15 about content" id="about">
                   <h4 >Về DEGREY</h4>
@@ -297,8 +423,8 @@
                   <p><b>Điện thoại:</b> 0336311117</p>
                   <p><b>Email:</b> degrey.vn@gmail.com</p>
                 </div>
-            
-    
+
+
                 <div class="client-support"  id="client-support" onclick="toggleInfo('support')"> <p>Hỗ trợ khách hàng</p>  </div>
                 <div class="padding-15 support" id="support">
                   <h4>Hỗ trợ khách hàng</h4>
@@ -311,8 +437,8 @@
                     <li><a href="#">Thông tin sở hữu</a></li>
                   </ul>
                 </div>
-            
-    
+
+
                 <div class="client-care"  id="client-care" onclick="toggleInfo('care')"> <p>Chăm sóc khách hàng</p></div>
                 <div class="padding-15 care" id="care">
                   <h4>Chăm sóc khách hàng</h4>
@@ -350,13 +476,13 @@
                   </div>
                 </div>
               </div>
-    
+
               <div class="footer-copy">
                 <p>Copyright © 2024 DEGREY VIETNAM. Powered by Haravan</p>
               </div>
             </div>
           </div>
-         
+
           <script>
             function toggleInfo(id) {
             var info_footer = document.getElementById(id);

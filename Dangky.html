@@ -1,95 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Registration Form</title>
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
     <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        .background-container {
-            background: linear-gradient(to right, #e8d4b1,hsl(1, 45%, 80%)); /* Gradient từ màu vàng đến màu cam đậm */
-            background-size: cover; /* Đảm bảo hình nền đầy đủ kích thước */
-            background-position: center; /* Căn giữa hình nền */
-            background-repeat: no-repeat; /* Không lặp lại hình nền */
-            height: 100vh; /* Chiều cao tối đa của container */
-            display: flex;
-            justify-content: center;
-            align-items: center;
+      body {
+        font-family: Arial, sans-serif;
+      }
+      .background-container {
+        background: linear-gradient(
+          to right,
+          #e8d4b1,
+          hsl(1, 45%, 80%)
+        ); /* Gradient từ màu vàng đến màu cam đậm */
+        background-size: cover; /* Đảm bảo hình nền đầy đủ kích thước */
+        background-position: center; /* Căn giữa hình nền */
+        background-repeat: no-repeat; /* Không lặp lại hình nền */
+        height: 100vh; /* Chiều cao tối đa của container */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .card {
+        max-width: 400px;
+        border-radius: 15px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+      .card-header {
+        border-radius: 15px 15px 0 0;
+        color: #fff;
+        font-weight: bold;
+        text-align: center;
+        padding: 15px;
+        background: linear-gradient(
+          to right,
+          #ffd700,
+          #ff8c00
+        ); /* Gradient từ màu vàng đến màu cam đậm */
+      }
+      .card-body {
+        padding: 20px;
+      }
+      .form-group label {
+        font-weight: bold;
+        border-radius: 10px 10px 0 0; /* Bo góc cho label */
+        background-color: #f0f0f0; /* Màu nền của label */
+        padding: 8px 15px; /* Khoảng cách giữa nội dung và viền */
+        display: inline-block; /* Hiển thị như block nhưng không làm thay đổi cấu trúc của phần tử */
+        margin-bottom: 0; /* Loại bỏ margin dưới */
+      }
+      .form-control {
+        border-radius: 10px; /* Bo góc cho input */
+      }
+      .btn-primary {
+        background: linear-gradient(
+          to right,
+          #ffd700,
+          #ff8c00
+        ); /* Gradient từ màu vàng đến màu cam đậm */
+        border-color: #ff8c00; /* Màu cam nhạt */
+        border-radius: 5px;
+      }
+      .btn-primary:hover {
+        background: linear-gradient(
+          to right,
+          #ffd700,
+          #ffa500
+        ); /* Gradient từ màu vàng đến màu cam */
+        border-color: #ffa500; /* Màu cam */
+      }
+      .container {
+        width: 100%;
+        padding-top: 20px;
+        margin-right: -100px; /* Khoảng cách từ top */
+      }
+
+      /* Màn hình nhỏ  */
+      @media only screen and (max-width: 740px) {
+        .container {
+          margin: 0 auto;
+          width: 100%;
         }
         .card {
-            max-width: 400px;
-            border-radius: 15px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          max-width: 350px;
         }
-        .card-header {
-            border-radius: 15px 15px 0 0;
-            color: #fff;
-            font-weight: bold;
-            text-align: center;
-            padding: 15px;
-            background: linear-gradient(to right, #FFD700, #FF8C00); /* Gradient từ màu vàng đến màu cam đậm */
-        }
-        .card-body {
-            padding: 20px;
-        }
-        .form-group label {
-            font-weight: bold;
-            border-radius: 10px 10px 0 0; /* Bo góc cho label */
-            background-color: #f0f0f0; /* Màu nền của label */
-            padding: 8px 15px; /* Khoảng cách giữa nội dung và viền */
-            display: inline-block; /* Hiển thị như block nhưng không làm thay đổi cấu trúc của phần tử */
-            margin-bottom: 0; /* Loại bỏ margin dưới */
-        }
-        .form-control {
-            border-radius: 10px; /* Bo góc cho input */
-        }
-        .btn-primary {
-            background: linear-gradient(to right, #FFD700, #FF8C00); /* Gradient từ màu vàng đến màu cam đậm */
-            border-color: #FF8C00; /* Màu cam nhạt */
-            border-radius: 5px;
-        }
-        .btn-primary:hover {
-            background: linear-gradient(to right, #FFD700, #FFA500); /* Gradient từ màu vàng đến màu cam */
-            border-color: #FFA500; /* Màu cam */
-        }
-        .container {
-            padding-top: 20px;
-            margin-right: -100px; /* Khoảng cách từ top */
-        }
-    </style>
-</head>
-<body>
+      }
 
+      /* Màn hình vừa  */
+      @media only screen and (min-width: 740px) and (max-width: 1024px) {
+        .container {
+          width: 100%;
+          margin-left: 50px;
+        }
+      }
+    </style>
+  </head>
+  <body>
     <div class="background-container">
-        <div class="container">
-            <div class="card">
-                <h5 class="card-header">ĐĂNG KÝ TÀI KHOẢN</h5>
-                <div class="card-body">
-                    <form id="registrationForm">
-                        <div class="form-group">
-                            <label for="username">Username:</label>
-                            <input type="text" class="form-control" id="username" name="username" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email">Email:</label>
-                            <input type="email" class="form-control" id="email" name="email" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="password">Password:</label>
-                            <input type="password" class="form-control" id="password" name="password" required>
-                        </div>
-                        
-                        <button type="submit" class="btn btn-primary btn-block rounded-bottom">ĐĂNG KÝ</button>
-                    </form>
-                </div>
-            </div>
+      <div class="container">
+        <div class="card">
+          <h5 class="card-header">ĐĂNG KÝ TÀI KHOẢN</h5>
+          <div class="card-body">
+            <form id="registrationForm">
+              <div class="form-group">
+                <label for="username">Username:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="username"
+                  name="username"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email:</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  name="email"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="password">Password:</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="password"
+                  name="password"
+                  required
+                />
+              </div>
+
+              <button
+                type="submit"
+                class="btn btn-primary btn-block rounded-bottom"
+              >
+                ĐĂNG KÝ
+              </button>
+            </form>
+          </div>
         </div>
+      </div>
     </div>
 
     <!-- Bootstrap JS and jQuery -->
@@ -98,24 +159,25 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <script>
-        document.getElementById("registrationForm").addEventListener("submit", function(event) {
-            event.preventDefault(); // Ngăn chặn việc gửi biểu mẫu mặc định
+      document
+        .getElementById("registrationForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault(); // Ngăn chặn việc gửi biểu mẫu mặc định
 
-            // Lấy dữ liệu biểu mẫu
-            var username = document.getElementById("username").value;
-            var email = document.getElementById("email").value;
-            var password = document.getElementById("password").value;
+          // Lấy dữ liệu biểu mẫu
+          var username = document.getElementById("username").value;
+          var email = document.getElementById("email").value;
+          var password = document.getElementById("password").value;
 
-            // Kiểm tra xem tất cả các trường đã được nhập đủ thông tin hay không
-            if (username && email && password) {
-                // Nếu đã nhập đủ thông tin, chuyển hướng đến trang chủ
-                window.location.href = "index.html";
-            } else {
-                // Nếu còn trường chưa nhập đủ thông tin, hiển thị thông báo lỗi
-                alert("Vui lòng điền đầy đủ thông tin để đăng ký!");
-            }
+          // Kiểm tra xem tất cả các trường đã được nhập đủ thông tin hay không
+          if (username && email && password) {
+            // Nếu đã nhập đủ thông tin, chuyển hướng đến trang chủ
+            window.location.href = "index.html";
+          } else {
+            // Nếu còn trường chưa nhập đủ thông tin, hiển thị thông báo lỗi
+            alert("Vui lòng điền đầy đủ thông tin để đăng ký!");
+          }
         });
     </script>
-
-</body>
+  </body>
 </html>
