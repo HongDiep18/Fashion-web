@@ -50,6 +50,10 @@
           margin-right: 10px;
           color: #000;
     }
+    .search-btn button {
+    display: none; /* Ẩn biểu tượng kính lúp */
+    }
+
   </style>
   <body>
     <div id="Body">
@@ -74,10 +78,14 @@
                 <li><a href="store.html">Store</a></li>
                 <li><a href="Introduction.html">Giới thiệu</a></li>
               </ul>
-              <div class="search-btn">
-                <a href="#"><i class="ti-search"></i></a>
-                <input type="text" placeholder="Nhập sản phẩm tìm kiếm"/>
+              <div class="search-container">
+                <div class="search-btn">
+                  <button id="searchButton"><i class="ti-search"></i></button>
+                  <input type="text" id="searchInput" placeholder="Nhập sản phẩm tìm kiếm"/>
+                </div>
+                <div id="searchResults"></div>
               </div>
+
     
               <!--reponsive search -->
               <div class="mobile-search-btn">
@@ -117,20 +125,14 @@
                 <div class="all_product">
                   <div class="title_all_product">Tất cả sản phẩm</div>
                   <div class="dropdown">
-                    <div class="sort" >
-                      <p>Sắp xếp</p>
-                      <i class="ti-angle-down"></i>
-                    </div>
+                    <p id="sort_frame_title">Sắp xếp</p>
+                    <i class="ti-angle-down"></i>
                     <div class="dropdown-content">
                       <ul class="cumulus">
-                        <li><a href="#">Sản phẩm nổi bật</a></li>
+                        <li><a href="#" id="newest">Mới nhất</a></li>
                         <li><a href="#">Giá : tăng dần</a></li>
                         <li><a href="#">Tên : A - Z</a></li>
-                        <li><a href="#">Tên : Z- A</a></li>
-                        <li><a href="#"> Cũ nhất</a></li>
-                        <li><a href="#">Mới nhất</a></li>
-                        <li><a href="#">Bán chạy nhất</a></li>
-                        <li><a href="#">Tồn kho giảm dần</a></li>
+                        <li><a href="#" id="bestseller">Bán chạy nhất</a></li>
                       </ul>
                     </div>
                   </div>
@@ -204,25 +206,27 @@
                       </div>
                     </div>
                  
-    
-                    <div class="dropdown1 color" id="mausac">
-                      <div class="frame_title">Màu Sắc</div>
-                      <i class="ti-angle-down"></i>
-                      <div class="dropdown-content1">
-                        <ul>
-                          <li><div class="circle violet"></div></li>
-                          <li><div class="circle yellow"></div></li>
-                          <li><div class="circle orange"></div></li>
-                          <li><div class="circle pink"></div></li>
-                          <li><div class="circle black"></div></li>
-                          <li><div class="circle grey"></div></li>
-                          <li><div class="circle red"></div></li>
-                          <li><div class="circle blue"></div></li>
-                          <li><div class="circle green"></div></li>
-                          <li><div class="circle green-yellow"></div></li>
-                        </ul>
+                    <td>
+                      <div class="dropdown1 color">
+                        <p id="frame_title">Màu Sắc</p>
+                        <i class="ti-angle-down"></i>
+                        <div class="dropdown-content1">
+                          <ul>
+                            <li><div class="circle violet"></div></li>
+                            <li><div class="circle yellow"></div></li>
+                            <li><div class="circle orange"></div></li>
+                            <li><div class="circle pink"></div></li>
+                            <li><div class="circle black"></div></li>
+                            <li><div class="circle grey"></div></li>
+                            <li><div class="circle white"></div></li>
+                            <li><div class="circle red"></div></li>
+                            <li><div class="circle green"></div></li>
+                            <li><div class="circle green-yellow"></div></li>
+                          </ul>
+                        </div>
                       </div>
-                    </div>
+                    </td>
+        
                 
       
                
@@ -902,8 +906,440 @@
     this.innerText = "Xem thêm sản phẩm";
   }
 });
+//tìm kiếm sản phẩm không phân biệt chữ hoa thường
+        // Bắt sự kiện click vào nút tìm kiếm
+        document.getElementById('searchButton').addEventListener('click', function() {
+            search();
+        });
+
+        // Bắt sự kiện nhấn phím trong ô tìm kiếm
+        document.getElementById('searchInput').addEventListener('input', function() {
+            search();
+        });
+
+        // Hàm tìm kiếm
+
+        function search() {
+            var searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            var products = document.querySelectorAll('.product_content');
+
+            products.forEach(function(product) {
+                var productText = product.querySelector('#text').textContent.toLowerCase();
+                var productContainer = product.parentElement;
+
+                if (productText.includes(searchTerm)) {
+                    productContainer.style.display = 'block'; // Hiển thị sản phẩm nếu chứa từ khóa tìm kiếm
+                } else {
+                    productContainer.style.display = 'none'; // Ẩn sản phẩm nếu không chứa từ khóa tìm kiếm
+                }
+            });
+        }
+        //SẮP XẾP SẢN PHẨM
+       
+    // LỌC GIÁ 
+    document.addEventListener("DOMContentLoaded", function () {
+        var priceCheckboxes = document.querySelectorAll('input[name="option"]');
+        var allProducts = document.querySelectorAll(".product_content");
+
+        priceCheckboxes.forEach(function (checkbox) {
+            checkbox.addEventListener("change", function () {
+                filterProductsByPrice();
+            });
+        });
+
+        function filterProductsByPrice() {
+            var checkedPriceOptions = Array.from(priceCheckboxes).filter(function (checkbox) {
+                return checkbox.checked;
+            }).map(function (checkbox) {
+                return checkbox.value;
+            });
+
+            allProducts.forEach(function (product) {
+                var productPrice = parseFloat(product.querySelector("#price").innerText.replace("đ", "").replace(",", "").trim());
+
+                if (checkedPriceOptions.length === 0) {
+                    product.style.display = "block"; // Hiển thị tất cả sản phẩm nếu không có mức giá được chọn
+                } else {
+                    if (checkedPriceOptions.includes("option1") && productPrice < 100000) {
+                        product.style.display = "block";
+                    } else if (checkedPriceOptions.includes("option2") && productPrice >= 100000 && productPrice <= 200000) {
+                        product.style.display = "block";
+                    } else if (checkedPriceOptions.includes("option3") && productPrice >= 250000 && productPrice <= 500000) {
+                        product.style.display = "block";
+                    } else if (checkedPriceOptions.includes("option4") && productPrice >= 500000 && productPrice <= 800000) {
+                        product.style.display = "block";
+                    } else if (checkedPriceOptions.includes("option5") && productPrice > 800000) {
+                        product.style.display = "block";
+                    } else {
+                        product.style.display = "none"; // Ẩn sản phẩm nếu không khớp với mức giá đã chọn
+                    }
+                }
+            });
+        }
+    });
+    // sắp xếp màu sắc 
+   // Lấy circle màu đen
+var blackCircle = document.querySelector('.circle.black');
+
+// Thêm sự kiện click cho circle màu đen
+blackCircle.addEventListener('click', function() {
+    // Lấy danh sách các sản phẩm
+    var productsList = document.querySelectorAll('.product_content');
+
+    // Duyệt qua từng sản phẩm để kiểm tra và hiển thị sản phẩm thích hợp
+    productsList.forEach(function(product) {
+        var productName = product.querySelector('#text').innerText.toLowerCase(); // Lấy tên sản phẩm và chuyển thành chữ thường
+
+        console.log(productName); // In ra tên sản phẩm để kiểm tra
+
+        // Kiểm tra xem tên sản phẩm có chứa từ khóa "đen" hoặc "black" không
+        if (productName.includes('đen') || productName.includes('black')) {
+            // Hiển thị sản phẩm
+            product.style.display = 'block';
+        } else {
+            // Ẩn sản phẩm không phù hợp
+            product.style.display = 'none';
+        }
+    });
+});
+    
+    // Lấy circle màu trắng
+var whiteCircle = document.querySelector('.circle.white');
+
+// Thêm sự kiện click cho circle màu trắng
+whiteCircle.addEventListener('click', function() {
+    // Lấy danh sách các sản phẩm
+    var productsList = document.querySelectorAll('.product_content');
+
+    // Duyệt qua từng sản phẩm để kiểm tra và hiển thị sản phẩm thích hợp
+    productsList.forEach(function(product) {
+        var productName = product.querySelector('#text').innerText.toLowerCase(); // Lấy tên sản phẩm và chuyển thành chữ thường
+
+        console.log(productName); // In ra tên sản phẩm để kiểm tra
+
+        // Kiểm tra xem tên sản phẩm có chứa từ khóa "kem", "white" hoặc "trắng" không
+        if (productName.includes('kem') || productName.includes('white') || productName.includes('trắng')) {
+            // Hiển thị sản phẩm
+            product.style.display = 'block';
+        } else {
+            // Ẩn sản phẩm không phù hợp
+            product.style.display = 'none';
+        }
+       
+    });
+});
+// lọc màu đỏ 
+var redCircle = document.querySelector('.circle.red');
+
+// Thêm sự kiện click cho circle màu đỏ
+redCircle.addEventListener('click', function() {
+    // Lấy danh sách các sản phẩm
+    var productsList = document.querySelectorAll('.product_content');
+
+    // Duyệt qua từng sản phẩm để kiểm tra và hiển thị sản phẩm thích hợp
+    productsList.forEach(function(product) {
+        var productName = product.querySelector('#text').innerText.toLowerCase(); // Lấy tên sản phẩm và chuyển thành chữ thường
+
+        console.log(productName); // In ra tên sản phẩm để kiểm tra
+
+        // Kiểm tra xem tên sản phẩm có chứa từ khóa "đỏ" hoặc "red" không
+        if (productName.includes('đỏ') || productName.includes('red')) {
+            // Hiển thị sản phẩm
+            product.style.display = 'block';
+        } else {
+            // Ẩn sản phẩm không phù hợp
+            product.style.display = 'none';
+        }
+    });
+});
+//
+// Lọc sản phẩm khi nhấp vào circle màu violet
+var violetCircle = document.querySelector('.circle.violet');
+violetCircle.addEventListener('click', function() {
+    var productsList = document.querySelectorAll('.product_content');
+    productsList.forEach(function(product) {
+        var productName = product.querySelector('#text').innerText.toLowerCase();
+        if (productName.includes('violet') || productName.includes('tím')) {
+            product.style.display = 'block';
+        } else {
+            product.style.display = 'none';
+        }
+    });
+});
+// Lọc sản phẩm khi nhấp vào circle màu yellow
+var yellowCircle = document.querySelector('.circle.yellow');
+yellowCircle.addEventListener('click', function() {
+    var productsList = document.querySelectorAll('.product_content');
+    productsList.forEach(function(product) {
+        var productName = product.querySelector('#text').innerText.toLowerCase();
+        if (productName.includes('yellow') || productName.includes('vàng')) {
+            product.style.display = 'block';
+        } else {
+            product.style.display = 'none';
+        }
+    });
+});
+
+// Thêm sự kiện cho circle màu yellow
+var yellowCircle = document.querySelector('.circle.yellow');
+yellowCircle.addEventListener('click', function() {
+    filterProductsByColor('yellow'); // Gọi hàm lọc sản phẩm với màu yellow
+});
+// Thêm sự kiện cho circle màu orange
+var orangeCircle = document.querySelector('.circle.orange');
+orangeCircle.addEventListener('click', function() {
+    filterProductsByColor('orange'); // Gọi hàm lọc sản phẩm với màu orange
+});
+
+// Thêm sự kiện cho circle màu pink
+var pinkCircle = document.querySelector('.circle.pink');
+pinkCircle.addEventListener('click', function() {
+    filterProductsByColor('pink'); // Gọi hàm lọc sản phẩm với màu pink
+});
+
+// Thêm sự kiện cho circle màu grey
+var greyCircle = document.querySelector('.circle.grey');
+greyCircle.addEventListener('click', function() {
+    filterProductsByColor('grey'); // Gọi hàm lọc sản phẩm với màu grey
+});
+
+// Thêm sự kiện cho circle màu green
+var greenCircle = document.querySelector('.circle.green');
+greenCircle.addEventListener('click', function() {
+    filterProductsByColor('green'); // Gọi hàm lọc sản phẩm với màu green
+});
+
+// Thêm sự kiện cho circle màu green-yellow
+var greenYellowCircle = document.querySelector('.circle.green-yellow');
+greenYellowCircle.addEventListener('click', function() {
+    filterProductsByColor('green-yellow'); // Gọi hàm lọc sản phẩm với màu green-yellow
+});
+
+// LỌC KÍCH THƯỚC 
+// Thêm sự kiện cho kích thước S
+var sizeSCheckbox = document.querySelector('#checkbox1');
+sizeSCheckbox.addEventListener('change', function() {
+    filterProductsBySize('S'); // Gọi hàm lọc sản phẩm với kích thước S
+});
+
+// Thêm sự kiện cho kích thước M
+var sizeMCheckbox = document.querySelector('#checkbox2');
+sizeMCheckbox.addEventListener('change', function() {
+    filterProductsBySize('M'); // Gọi hàm lọc sản phẩm với kích thước M
+});
+
+// Thêm sự kiện cho kích thước L
+var sizeLCheckbox = document.querySelector('#checkbox3');
+sizeLCheckbox.addEventListener('change', function() {
+    filterProductsBySize('L'); // Gọi hàm lọc sản phẩm với kích thước L
+});
+
+// Thêm sự kiện cho kích thước XL
+var sizeXLCheckbox = document.querySelector('#checkbox4');
+sizeXLCheckbox.addEventListener('change', function() {
+    filterProductsBySize('XL'); // Gọi hàm lọc sản phẩm với kích thước XL
+});
+function filterProductsBySize(size) {
+    var productsList = document.querySelectorAll('.product_content');
+
+    productsList.forEach(function(product) {
+        var productName = product.querySelector('#text').innerText.toLowerCase();
+
+        // Kiểm tra xem tên sản phẩm có chứa từ khóa tương ứng với kích thước không
+        if (productName.includes(size) && (productName.includes('tee') || productName.includes('áo') || productName.includes('hoodie') || productName.includes('shirt') || productName.includes('quần'))) {
+            // Hiển thị sản phẩm
+            product.style.display = 'block';
+        } else {
+            // Ẩn sản phẩm không phù hợp
+            product.style.display = 'none';
+        }
+    });
+}
+//tìm kiếm sản phẩm không phân biệt chữ hoa thường
+        // Bắt sự kiện click vào nút tìm kiếm
+        document.getElementById('searchButton').addEventListener('click', function() {
+            search();
+        });
+
+        // Bắt sự kiện nhấn phím trong ô tìm kiếm
+        document.getElementById('searchInput').addEventListener('input', function() {
+            search();
+        });
+
+        // Hàm tìm kiếm
+
+        function search() {
+            var searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            var products = document.querySelectorAll('.product_content');
+
+            products.forEach(function(product) {
+                var productText = product.querySelector('#text').textContent.toLowerCase();
+                var productContainer = product.parentElement;
+
+                if (productText.includes(searchTerm)) {
+                    productContainer.style.display = 'block'; // Hiển thị sản phẩm nếu chứa từ khóa tìm kiếm
+                } else {
+                    productContainer.style.display = 'none'; // Ẩn sản phẩm nếu không chứa từ khóa tìm kiếm
+                }
+            });
+        }
+//SẮP XẾP SẢN PHẨM
+        //Z-A và A_Z
+        document.addEventListener("DOMContentLoaded", function() {
+    const sortLinks = document.querySelectorAll(".cumulus a"); // Chọn tất cả các liên kết sắp xếp
+
+    sortLinks.forEach(function(link) {
+        link.addEventListener("click", function(event) {
+            event.preventDefault(); // Ngăn chặn hành vi mặc định của liên kết
+
+            const sortBy = link.textContent.trim(); // Lấy nội dung của liên kết
+            sortProducts(sortBy); // Gọi hàm sắp xếp sản phẩm
+        });
+    });
+
+    function sortProducts(sortBy) {
+        const productsContainer = document.getElementById("productInfo"); // Lấy phần tử chứa sản phẩm
+
+        const products = Array.from(productsContainer.querySelectorAll(".product_content")); // Chọn tất cả các sản phẩm
+
+        products.sort(function(a, b) {
+            const textA = a.querySelector("#text").textContent.trim().toUpperCase();
+            const textB = b.querySelector("#text").textContent.trim().toUpperCase();
+
+            if (sortBy === "Tên : A - Z") {
+                return textA.localeCompare(textB);
+            } else if (sortBy === "Tên : Z - A") {
+                return textB.localeCompare(textA);
+            }
+        });
+
+        // Xóa tất cả sản phẩm hiện tại
+        while (productsContainer.firstChild) {
+            productsContainer.removeChild(productsContainer.firstChild);
+        }
+
+        // Thêm sản phẩm đã sắp xếp vào container
+        products.forEach(function(product) {
+            productsContainer.appendChild(product);
+        });
+    }
+});
+// sắp xếp sản phẩm bán chạy nhất
+document.addEventListener("DOMContentLoaded", function () {
+        var bestsellerLink = document.getElementById("bestseller");
+        var allProducts = document.querySelectorAll(".product_content");
+
+        bestsellerLink.addEventListener("click", function (e) {
+            e.preventDefault(); // Ngăn chặn hành vi mặc định của liên kết
+            showMiddleFourProducts(); // Gọi hàm để hiển thị bốn sản phẩm ở giữa
+        });
+
+        function showMiddleFourProducts() {
+            var totalProducts = allProducts.length;
+            var startIndex = Math.floor((totalProducts - 4) / 2); // Chỉ số bắt đầu của bốn sản phẩm ở giữa
+            for (var i = 0; i < totalProducts; i++) {
+                if (i >= startIndex && i < startIndex + 4) {
+                    // Hiển thị bốn sản phẩm ở giữa
+                    allProducts[i].style.display = "block";
+                } else {
+                    // Ẩn các sản phẩm còn lại
+                    allProducts[i].style.display = "none";
+                }
+            }
+        }
+    });
+// sắp xếp sản phẩm mới nhất nhất
+document.addEventListener("DOMContentLoaded", function () {
+        var bestsellerLink = document.getElementById("newest");
+        var allProducts = document.querySelectorAll(".product_content");
+
+        bestsellerLink.addEventListener("click", function (e) {
+            e.preventDefault(); // Ngăn chặn hành vi mặc định của liên kết
+            showMiddleFourProducts(); // Gọi hàm để hiển thị bốn sản phẩm ở giữa
+        });
+
+        function showMiddleFourProducts() {
+            var totalProducts = allProducts.length;
+            var startIndex = Math.floor((totalProducts - 2) / 2); // Chỉ số bắt đầu của bốn sản phẩm ở giữa
+            for (var i = 0; i < totalProducts; i++) {
+                if (i >= startIndex && i < startIndex + 2) {
+                    // Hiển thị bốn sản phẩm ở giữa
+                    allProducts[i].style.display = "block";
+                } else {
+                    // Ẩn các sản phẩm còn lại
+                    allProducts[i].style.display = "none";
+                }
+            }
+        }
+    });
+   //SẮP XẾP GIÁ TĂNG DẦN
+const sortLinks = document.querySelectorAll(".cumulus a"); // Chọn tất cả các liên kết sắp xếp
+
+sortLinks.forEach(function(link) {
+    link.addEventListener("click", function(event) {
+        event.preventDefault(); // Ngăn chặn hành vi mặc định của liên kết
+
+        const sortBy = link.textContent.trim(); // Lấy nội dung của liên kết
+        if (sortBy === "Giá : tăng dần") {
+            sortProducts(sortBy); // Gọi hàm sắp xếp sản phẩm chỉ khi người dùng chọn "Giá : tăng dần"
+        }
+    });
+});
+
+function sortProducts(sortBy) {
+    const productsContainer = document.getElementById("productInfo"); // Lấy phần tử chứa sản phẩm
+
+    const products = Array.from(productsContainer.querySelectorAll(".product_content")); // Chọn tất cả các sản phẩm
+
+    products.sort(function(a, b) {
+        const priceA = parseFloat(a.querySelector("#price").textContent.replace("đ", "").replace(",", "").trim());
+        const priceB = parseFloat(b.querySelector("#price").textContent.replace("đ", "").replace(",", "").trim());
+
+        if (sortBy === "Giá : tăng dần") {
+            return priceA - priceB;
+        } else if (sortBy === "Giá : giảm dần") {
+            return priceB - priceA;
+        }
+    });
+
+    // Xóa tất cả sản phẩm hiện tại
+    while (productsContainer.firstChild) {
+        productsContainer.removeChild(productsContainer.firstChild);
+    }
+
+    // Thêm sản phẩm đã sắp xếp vào container
+    products.forEach(function(product) {
+        productsContainer.appendChild(product);
+    });
+    }
+    // sắp xếp sản phẩm mới nhất
+    document.addEventListener("DOMContentLoaded", function () {
+            var newestLink = document.getElementById("newest");
+            var allProducts = document.querySelectorAll(".product_content");
+
+            newestLink.addEventListener("click", function (e) {
+                e.preventDefault(); // Ngăn chặn hành vi mặc định của liên kết
+                toggleProductVisibility(); // Gọi hàm để ẩn các sản phẩm
+            });
+
+            function toggleProductVisibility() {
+                for (var i = 0; i < allProducts.length; i++) {
+                    if (i < 6) {
+                        // Hiển thị ba sản phẩm đầu tiên
+                        allProducts[i].style.display = "block";
+                    } else {
+                        // Ẩn các sản phẩm còn lại
+                        allProducts[i].style.display = "none";
+                    }
+                }
+            }
+        });
 
 
     </script>
   </body>
 </html>
+
+
+
+   

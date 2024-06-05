@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thông tin mua hàng</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 20px;
+        }
+
+        .container {
+            display: flex;
+            width: 800px;
+        }
+
+        .left-section {
+            flex: 1;
+            margin-left: -250px;
+            margin-right: 5px;
+            background-color: #f6e8ee;
+            
+        }
+
+
+        .right-section {
+            flex: 1;
+            padding-left: 5px;
+            margin-right: -250px;
+            background-color: #e3edfb;
+        }
+
+        h2 {
+            margin-bottom: 10px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            display: inline-block; /* Display them inline */
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .product-list {
+            margin-top: 20px;
+        }
+
+        .product {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .product img {
+            width: 70px; /* Điều chỉnh kích thước ảnh */
+            height: auto; /* Giữ tỷ lệ khung hình */
+            margin-right: 10px;
+        }
+
+        .product-info {
+            flex: 1; /* Cho phép nội dung chứa thông tin sản phẩm mở rộng theo chiều ngang */
+            display: flex;
+            flex-direction: column;
+            margin-left: 20px;
+            margin-left: 20px; 
+        }
+
+        .product-info div {
+            margin-bottom: 5px;
+            
+        }
+        .total-price {
+            margin-top: 20px;
+            font-weight: bold;
+            color: red; 
+            margin-bottom: 15px;
+            font-size: 20px;
+            
+        }
+        #checkout_form {
+        margin-left: 20px; /* hoặc bất kỳ giá trị khoảng cách nào khác bạn muốn */
+        }
+        select {
+            width: calc(33.33% - 14px); /* 33.33% width for each dropdown with some margin */
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            display: inline-block; /* Display them inline */
+            margin-right: 10px; /* Margin between dropdowns */
+        }
+        .voucher {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 10px;
+            width: 200px;
+        }
+
+        .voucher label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color : red;
+        }
+
+        .voucher input[type="checkbox"] {
+            margin-right: 5px;
+        }
+
+        .voucher label span {
+            font-weight: normal;
+        }
+        
+        
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left-section">
+            <h1 style="margin-left: 20px;">DEGREY VIETNAM</h1>
+            <a href="index.html" style="text-decoration: none; color: black;margin-left: 20px;">Trang chủ &nbsp;</a>/&nbsp; 
+            <a href="product.html" style="text-decoration: none; color: black;margin-left: 20px;">Sản phẩm &nbsp;</a>
+            <h2 style="margin-left: 20px;">Thông tin giao hàng</h2>
+            <form id="checkout_form">
+                <label for="name">Họ và tên:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="phone">Số điện thoại:</label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <label for="address">Địa chỉ:</label>
+                <textarea id="address" name="address" rows="4" required></textarea>
+
+                <label for="province">Tỉnh/Thành:</label>
+                <select id="province" name="province" required>
+                    <option value="" disabled selected>-- Chọn tỉnh/thành --</option>
+                    <option value="hanoi">Hà Nội</option>
+                    <option value="hcm">TP. Hồ Chí Minh</option>
+                    <option value="haiphong">Hải Phòng</option>
+                    <option value="danang">Đà Nẵng</option>
+                    <option value="cantho">Cần Thơ</option>
+                    <option value="haiduong">Hải Dương</option>
+                    <option value="bariavungtau">Bà Rịa - Vũng Tàu</option>
+                    <option value="bacgiang">Bắc Giang</option>
+                    <option value="backan">Bắc Kạn</option>
+                    <option value="baclieu">Bạc Liêu</option>
+                    <option value="bacninh">Bắc Ninh</option>
+                    <option value="bentre">Bến Tre</option>
+                    <option value="binhdinh">Bình Định</option>
+                    <option value="binhduong">Bình Dương</option>
+                    <option value="binhphuoc">Bình Phước</option>
+                    <option value="binhthuan">Bình Thuận</option>
+                    <option value="camau">Cà Mau</option>
+                    <option value="caobang">Cao Bằng</option>
+                    <option value="daklak">Đắk Lắk</option>
+                    <option value="daknong">Đắk Nông</option>
+                    <option value="dienbien">Điện Biên</option>
+                    <option value="dongnai">Đồng Nai</option>
+                    <option value="dongthap">Đồng Tháp</option>
+                    <option value="gialai">Gia Lai</option>
+                    <option value="hagiang">Hà Giang</option>
+                    <option value="hanam">Hà Nam</option>
+                    <option value="hatinh">Hà Tĩnh</option>
+                    <option value="haugiang">Hậu Giang</option>
+                    <option value="hoabinh">Hòa Bình</option>
+                    <option value="hungyen">Hưng Yên</option>
+                    <option value="khanhhoa">Khánh Hòa</option>
+                    <option value="kiengiang">Kiên Giang</option>
+                </select>
+
+                <label for="district">Quận/Huyện:</label>
+                <select id="district" name="district" required>
+                    <option value="" disabled selected>-- Chọn quận/huyện --</option>
+                    <!-- Thêm các tùy chọn cho quận/huyện -->
+                    <option value="quandongda">Quận Đống Đa</option>
+                    <option value="quanhoankiem">Quận Hoàn Kiếm</option>
+                    <option value="1">Quận 1</option>
+                    <option value="2">Quận 2</option>
+                    <option value="3">Quận 3</option>
+                    <option value="4">Quận 4</option>
+                    <option value="5">Quận 5</option>
+                    <option value="6">Quận 6</option>
+                    <option value="7">Quận 7</option>
+                    <option value="8">Quận 8</option>
+                    <option value="9">Quận 9</option>
+                    <option value="10">Quận 10</option>
+                    <option value="11">Quận 11</option>
+                    <option value="12">Quận 12</option>
+                    <option value="binhtan">Bình Tân</option>
+                    <option value="binhthanh">Bình Thạnh</option>
+                    <option value="govap">Gò Vấp</option>
+                    <option value="phunhuan">Phú Nhuận</option>
+                    <option value="tanbinh">Tân Bình</option>
+                    <option value="tanphu">Tân Phú</option>
+                    <option value="thuduc">Thủ Đức</option>
+                    <option value="binhchanh">Bình Chánh</option>
+                    <option value="cangio">Cần Giờ</option>
+                    <option value="cuchi">Củ Chi</option>
+                    <option value="hocmon">Hóc Môn</option>
+                    <option value="nhabe">Nhà Bè</option>
+                </select>
+
+                <label for="ward">Phường/Xã:</label>
+                <select id="ward" name="ward" required>
+                    <option value="" disabled selected>-- Chọn phường/xã --</option>
+                    <!-- Thêm các tùy chọn cho phường/xã -->
+                    <option value="" disabled selected>-- Chọn phường/xã --</option>
+                    <option value="Phường Bến Nghé">Phường Bến Nghé</option>
+                    <option value="Phường Bến Thành">Phường Bến Thành</option>
+                    <option value="Phường Cầu Kho">Phường Cầu Kho</option>
+                    <option value="Phường Cầu Ông Lãnh">Phường Cầu Ông Lãnh</option>
+                    <option value="Phường Cô Giang">Phường Cô Giang</option>
+                    <option value="Phường Đa Kao">Phường Đa Kao</option>
+                    <option value="Phường Nguyễn Cư Trinh">Phường Nguyễn Cư Trinh</option>
+                    <option value="Phường Nguyễn Thái Bình">Phường Nguyễn Thái Bình</option>
+                    <option value="Phường Phạm Ngũ Lão">Phường Phạm Ngũ Lão</option>
+                    <option value="Phường Tân Định">Phường Tân Định</option>
+                    <option value="Phường Bến Thành">Phường Bến Thành</option>
+                    <option value="Phường Cầu Kho">Phường Cầu Kho</option>
+                    <option value="Phường Cầu Ông Lãnh">Phường Cầu Ông Lãnh</option>
+                    <option value="Phường Cô Giang">Phường Cô Giang</option>
+                    <option value="Phường Đa Kao">Phường Đa Kao</option>
+                </select>
+
+                <label for="cash_on_delivery">
+                    <input type="checkbox" id="cash_on_delivery" name="payment_method" value="cash" required>
+                    Thanh toán khi nhận hàng
+                </label><br>
+                <label for="credit_card">
+                    <input type="checkbox" id="credit_card" name="payment_method" value="credit" required>
+                    Thanh toán bằng thẻ tín dụng
+                </label><br>
+
+
+                <label for="order_date">Ngày đặt hàng:</label>
+                <input type="date" id="order_date" name="order_date" required>
+
+                <label for="delivery_date">Ngày dự kiến giao hàng:</label>
+                <input type="date" id="delivery_date" name="delivery_date" required>
+
+
+            
+
+               <center> <button type="submit" style="margin-bottom: 20px;">ĐẶT HÀNG NGAY</button></center>
+            </form>
+        </div>
+        <div class="right-section">
+            <h2>THÔNG TIN CÁC SẢN PHẨM</h2>
+            <div class="product-list" id="selected_products_list">
+                <!-- Danh sách sản phẩm sẽ được thêm bằng JavaScript -->
+            </div>
+            <div class="total-price" id="total_price">
+                <!-- Tổng tiền sẽ được tính bằng JavaScript -->
+            </div>
+            <div class="voucher">
+                <label for="voucher_10000">
+                    <input type="checkbox" id="voucher_10000" name="voucher" value="10000"> Giảm 10,000 đ
+                    <span style="color: black;">(Số tiền sẽ được giảm trực tiếp từ tổng hóa đơn)</span>
+                </label>
+            </div>
+            <div class="voucher">
+                <label for="voucher_5000">
+                    <input type="checkbox" id="voucher_5000" name="voucher" value="5000"> Giảm 5,000 đ
+                    <span style="color: black;">(Số tiền sẽ được giảm trực tiếp từ tổng hóa đơn)</span>
+                </label>
+            </div>
+            <div class="voucher">
+                <label for="voucher_15000">
+                    <input type="checkbox" id="voucher_15000" name="voucher" value="15000"> Giảm 15,000 đ
+                    <span style="color: black;">(Số tiền sẽ được giảm trực tiếp từ tổng hóa đơn)</span>
+                </label>
+            </div>
+        </div>
+    </div>
+    <script>
+      // Hiển thị các sản phẩm đã chọn mua và giá của chúng
+function displaySelectedProducts() {
+    let selectedProducts = JSON.parse(localStorage.getItem('cart')) || [];
+    const selectedProductsList = document.getElementById('selected_products_list');
+    selectedProductsList.innerHTML = '';
+
+    selectedProducts.forEach((product, index) => {
+        if (product.quantity > 0) {
+            const listItem = document.createElement('div');
+            listItem.classList.add('product');
+            listItem.innerHTML = `
+                <img src="${product.image}" alt="${product.name}">
+                <div>
+                    <strong>${product.name}</strong><br>
+                    <span>Giá: ${product.price * product.quantity} đ</span><br>
+                    <span>Số lượng: ${product.quantity}</span><br>
+                    <span>Size: ${product.size}</span><br>
+                </div>
+            `;
+            selectedProductsList.appendChild(listItem);
+        }
+    });
+}
+
+        // Tính tổng tiền
+        function calculateTotalPrice() {
+            let total = 0;
+            let selectedProducts = JSON.parse(localStorage.getItem('cart')) || [];
+            selectedProducts.forEach((product) => {
+                total += product.price * product.quantity;
+            });
+            return total;
+        }
+
+        // Hiển thị tổng tiền
+        function displayTotalPrice() {
+            const totalPriceElement = document.getElementById('total_price');
+            totalPriceElement.textContent = `TỔNG TIỀN: ${calculateTotalPrice().toLocaleString()} đ`;
+        }
+
+        // Gọi hàm hiển thị sản phẩm và tổng tiền khi trang được tải
+        window.onload = function() {
+            displaySelectedProducts();
+            displayTotalPrice();
+        };
+
+        // Xử lý khi nhấn nút thanh toán
+        const checkoutForm = document.getElementById('checkout_form');
+        checkoutForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            // Thực hiện xử lý thanh toán tại đây (ví dụ: gửi dữ liệu đến máy chủ)
+            alert('Đơn hàng đã được gửi đi! Cảm ơn bạn đã mua hàng.');
+            // Xóa giỏ hàng sau khi thanh toán
+            localStorage.removeItem('cart');
+            // Chuyển hướng người dùng đến trang chính sau khi thanh toán
+            window.location.href = 'index.html';
+        });
+
+        //check box
+        const cashCheckbox = document.getElementById('cash_on_delivery');
+    const creditCheckbox = document.getElementById('credit_card');
+
+    cashCheckbox.addEventListener('change', function() {
+        if (cashCheckbox.checked) {
+            creditCheckbox.disabled = true;
+        } else {
+            creditCheckbox.disabled = false;
+        }
+    });
+
+    creditCheckbox.addEventListener('change', function() {
+        if (creditCheckbox.checked) {
+            cashCheckbox.disabled = true;
+        } else {
+            cashCheckbox.disabled = false;
+        }
+    });
+    // ÁP mã giảm giá 
+    // Lắng nghe sự kiện khi có thay đổi trong các checkbox
+const voucherCheckboxes = document.querySelectorAll('input[name="voucher"]');
+voucherCheckboxes.forEach(function(checkbox) {
+    checkbox.addEventListener('change', function() {
+        if (this.checked) {
+            applyDiscount(parseInt(this.value));
+            // Loại bỏ chọn các checkbox khác nếu có
+            voucherCheckboxes.forEach(function(otherCheckbox) {
+                if (otherCheckbox !== checkbox) {
+                    otherCheckbox.checked = false;
+                }
+            });
+        } else {
+            // Nếu checkbox được bỏ chọn, hủy giảm giá
+            cancelDiscount();
+        }
+    });
+});
+
+// Hàm áp dụng giảm giá cho đơn hàng
+function applyDiscount(discountAmount) {
+    // Viết mã để áp dụng giảm giá cho đơn hàng
+    // Cập nhật tổng tiền của đơn hàng
+    const total = calculateTotalPrice();
+    const discountedTotal = total - discountAmount;
+    const totalPriceElement = document.getElementById('total_price');
+    totalPriceElement.textContent = `TỔNG TIỀN: ${discountedTotal.toLocaleString()} đ`;
+}
+
+// Hủy giảm giá
+function cancelDiscount() {
+    // Cập nhật tổng tiền của đơn hàng khi không có mã giảm giá nào được chọn
+    const total = calculateTotalPrice();
+    const totalPriceElement = document.getElementById('total_price');
+    totalPriceElement.textContent = `TỔNG TIỀN: ${total.toLocaleString()} đ`;
+}
+    // NGÀY ĐẶT VÀ NGÀY GIAO
+    // Lấy ngày hiện tại và điền vào trường ngày đặt hàng
+    const today = new Date();
+    const orderDateInput = document.getElementById('order_date');
+    const formattedToday = today.toISOString().split('T')[0]; // Định dạng ngày thành chuỗi YYYY-MM-DD
+    orderDateInput.value = formattedToday;
+
+    // Tính toán ngày dự kiến giao hàng, ví dụ, thêm 3 ngày vào ngày hiện tại
+    const deliveryDateInput = document.getElementById('delivery_date');
+    const deliveryDate = new Date(today);
+    deliveryDate.setDate(deliveryDate.getDate() + 5); // Thêm 3 ngày
+    const formattedDeliveryDate = deliveryDate.toISOString().split('T')[0]; // Định dạng ngày thành chuỗi YYYY-MM-DD
+    deliveryDateInput.value = formattedDeliveryDate;
+
+    </script>
+</body>
+</html>

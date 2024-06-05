@@ -16,6 +16,80 @@
     <link rel="stylesheet" href="product.html">
     <link rel="stylesheet" href="reponsive.css">
 </head>
+<style>
+  #cart_count, #cart_count_mobile {
+      background: red;
+      color: white;
+      border-radius: 50%;
+      padding: 0 5px;
+      margin-left: 5px;
+  }
+
+  .cart-details-popup {
+      position: absolute;
+      right: 10px;
+      top: 50px;
+      background: white;
+      border: 1px solid #ccc;
+      padding: 10px;
+      width: 300px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      z-index: 1000;
+  }
+
+  #cart_items_list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      max-height: 300px; /* Điều chỉnh chiều cao tùy ý */
+      overflow-y: auto;  /* Bật cuộn dọc */
+  }
+
+  #cart_items_list li {
+      padding: 10px 0;
+      border-bottom: 1px solid #ddd;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+  }
+
+  #cart_items_list li img {
+      width: 50px;
+      height: 50px;
+      margin-right: 10px;
+  }
+
+  #cart_items_list li:last-child {
+      border-bottom: none;
+  }
+
+  #total_price {
+      margin-top: 10px;
+      font-weight: bold;
+  }
+
+  #buy_now_button {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      background: #f0c14b;
+      border: none;
+      color: #333;
+      text-align: center;
+      cursor: pointer;
+      margin-top: 10px;
+  }
+
+  .delete-link {
+      color: red;
+      cursor: pointer;
+  }
+</style>
+
+
+
+
+
 <body>
 
     <div class="container">
@@ -53,10 +127,26 @@
     
     
               <div class="buy-btn">
-                <a href="#"><i class="ti-shopping-cart"></i></a>
+                <a href="#" id="cart_icon"><i class="ti-shopping-cart"></i><span id="cart_count">0</span></a>
                 <span class="buy-text">Giỏ hàng</span>
-              </div>
-    
+            </div>
+            <div class="mobile-buy-btn">
+                <a href="#" id="cart_icon_mobile"><i class="ti-shopping-cart"></i><span id="cart_count_mobile">0</span></a>
+            </div>
+            
+            <div id="cart_details" class="cart-details-popup" style="display:none;">
+                <h2>Giỏ hàng của bạn</h2>
+                <ul id="cart_items_list"></ul>
+                <div id="total_price">Tổng tiền: 0 đ</div>
+                
+                <button id="buy_now_button">Mua ngay</button>
+
+            </div>
+            
+
+            
+            
+            
                <!-- reponsive buy -->
               <div class="mobile-buy-btn">
                 <a href="#"><i class="ti-shopping-cart"></i></a>
@@ -158,8 +248,10 @@
                                     </div>
                             </td>
                                 <td>
-                                    <div class="button_effect">Thêm vào giỏ</div>
+                                    <div class="button_effect" id="add_to_cart_button">Thêm vào giỏ</div>
+
                                 </td>
+                               
                         </tr>
                     </table>
 
@@ -873,11 +965,10 @@
                 document.querySelector('.imgslider4').src = 'product_img/product_7.3.jpg';
                 document.querySelector('.imgslider5').src = 'product_img/product_7.4.jpg';
 
-                document.getElementById('size1').style.display='none';
+                document.getElementById('size1').innerText = 'Default';
                 document.getElementById('size2').style.display='none';
                 document.getElementById('size3').style.display='none';
                 document.getElementById('size4').style.display='none';
-                document.getElementById('size_').style.display='none';
 
                 document.getElementById('first_title').innerText = 'phụ kiện'
                  document.getElementById('name_title_product').innerText = 'Degrey Leather Basic Balo Kem Samll Size - LBBMK';
@@ -937,11 +1028,10 @@
                 document.querySelector('.imgslider4').src = 'product_img/product_8.3.jpg';
                 document.querySelector('.imgslider5').src = 'product_img/product_8.4.jpg';
 
-                document.getElementById('size1').style.display='none';
+                document.getElementById('size1').innerText = 'Default';
                 document.getElementById('size2').style.display='none';
                 document.getElementById('size3').style.display='none';
                 document.getElementById('size4').style.display='none';
-                document.getElementById('size_').style.display='none';
 
                 document.getElementById('first_title').innerText = 'phụ kiện'
                  document.getElementById('name_title_product').innerText = '(White Moment) Balo Da Degrey 2 Ngăn Big Logo - BWM';
@@ -1010,11 +1100,10 @@
    }
   }
 
-                document.getElementById('size1').style.display='none';
+                document.getElementById('size1').innerText = 'Default';
                 document.getElementById('size2').style.display='none';
                 document.getElementById('size3').style.display='none';
                 document.getElementById('size4').style.display='none';
-                document.getElementById('size_').style.display='none';
 
                 document.getElementById('first_title').innerText = 'phụ kiện'
                  document.getElementById('name_title_product').innerText = 'Degrey Leather ToteBook Kem - DLTK';
@@ -1140,11 +1229,10 @@
                 document.querySelector('.imgslider4').src = 'product_img/product_11.3.jpg';
                 document.querySelector('.imgslider5').src = 'product_img/product_11.4.jpg';
 
-                document.getElementById('size1').style.display='none';
+                document.getElementById('size1').innerText = 'Default';
                 document.getElementById('size2').style.display='none';
                 document.getElementById('size3').style.display='none';
                 document.getElementById('size4').style.display='none';
-                document.getElementById('size_').style.display='none';
 
                 document.getElementById('first_title').innerText = 'phụ kiện'
                  document.getElementById('name_title_product').innerText = 'Túi đeo chéo Degrey Coffee Simili Bag màu Kem nâu';
@@ -1206,11 +1294,10 @@
                 document.querySelector('.imgslider4').src = 'product_img/product_12.3.jpg';
                 document.querySelector('.imgslider5').src = 'product_img/product_12.4.jpg';
 
-                document.getElementById('size1').style.display='none';
+                document.getElementById('size1').innerText = 'Default';
                 document.getElementById('size2').style.display='none';
                 document.getElementById('size3').style.display='none';
                 document.getElementById('size4').style.display='none';
-                document.getElementById('size_').style.display='none';
 
                 document.getElementById('first_title').innerText = 'phụ kiện'
                  document.getElementById('name_title_product').innerText = 'Cặp Degrey simili có quai đeo kiểu Nhật - CAPS';
@@ -1408,17 +1495,17 @@
                 document.querySelector('.imgslider4').src = 'product_img/product_15.3.jpg';
                 document.querySelector('.imgslider5').src = 'product_img/product_15.4.jpg';
 
-                document.getElementById('size1').innerText='1';
-                document.getElementById('size2').innerText='2';
-                document.getElementById('size3').innerText='3';
-                document.getElementById('size4').innerText='4';
-
+                document.getElementById('size1').innerText='36';
+                document.getElementById('size2').innerText='37';
+                document.getElementById('size3').innerText='38';
+                document.getElementById('size4').innerText='39';
+                
 
                 document.getElementById('first_title').innerText = 'Phụ kiện'
                 document.getElementById('name_title_product').innerText = 'Dép da Degrey quai ngang đế cao su thời trang unisex - DEP';
                 document.getElementById('name-product').innerText = 'Dép da Degrey quai ngang đế cao su thời trang unisex - DEP';
                 document.getElementById('pv_discount').innerText = '700.000đ';
-                document.getElementById('pv_price').innerText = '580.000đ';
+                document.getElementById('pv_price').innerText = '550.000đ';
                 document.getElementById('content1').innerText = '+ MÔ TẢ SẢN PHẨM:';
                 document.getElementById('content2').innerText = '- Đế đúc : Chất liệu TPR bền bỉ, có đặc tính giống cao su, có thể tái chế được và';
                 document.getElementById('content3').innerText = 'bảo vệ môi trường.';
@@ -1456,9 +1543,117 @@
                 content24Element.style.fontWeight = 600;
                 document.getElementById('content30').innerText ='- Bạn phải có video unbox hàng , Quay video rõ nét 6 mặt của gói hàng';
         }
-
-
     });
+    // thêm sản phẩm vào giỏ hàng
+ // Cập nhật hiển thị số lượng sản phẩm trong giỏ
+function updateCartCount() {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    document.getElementById('cart_count').innerText = cart.length;
+    document.getElementById('cart_count_mobile').innerText = cart.length;
+}
+
+// Thêm sản phẩm vào giỏ hàng
+function addToCart() {
+    const productName = document.getElementById('name-product').innerText;
+    const productPrice = document.getElementById('pv_price').innerText;
+    const productQuantity = document.getElementById('quantity').value;
+    const productSize = document.querySelector('.box_size.active')?.innerText;
+    const productImage = document.querySelector('.imgslider1').src; 
+
+    if (!productSize) {
+        alert('Vui lòng chọn size trước khi thêm vào giỏ hàng.');
+        return;
+    }
+
+    const cartItem = {
+        name: productName,
+        price: parseFloat(productPrice.replace(/\D/g, '')), // Lưu giá dưới dạng số
+        quantity: parseInt(productQuantity),
+        size: productSize,
+        image: productImage
+    };
+
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart.push(cartItem);
+    localStorage.setItem('cart', JSON.stringify(cart));
+
+    updateCartCount();
+    alert('Sản phẩm đã được thêm vào giỏ hàng!');
+}
+
+// Hiển thị chi tiết giỏ hàng
+function showCartDetails() {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const cartItemsList = document.getElementById('cart_items_list');
+    cartItemsList.innerHTML = '';
+
+    cart.forEach((item, index) => {
+        const listItem = document.createElement('li');
+        listItem.innerHTML = `
+            <input type="checkbox" class="cart-item-checkbox" onchange="updateTotalPrice()">
+            <img src="${item.image}" alt="${item.name}">
+            <div>
+                <strong>${item.name}</strong><br>
+                Giá: ${item.price} đ<br>
+                Số lượng: ${item.quantity}<br>
+                Size: ${item.size}<br>
+                <span class="delete-link" onclick="removeFromCart(${index})">Xóa</span>
+            </div>
+        `;
+        cartItemsList.appendChild(listItem);
+    });
+
+    document.getElementById('cart_details').style.display = 'block';
+    updateTotalPrice();
+}
+
+// Xóa sản phẩm khỏi giỏ hàng
+function removeFromCart(index) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart.splice(index, 1);
+    localStorage.setItem('cart', JSON.stringify(cart));
+    updateCartCount();
+    showCartDetails();
+}
+
+// Cập nhật tổng tiền của các sản phẩm được chọn
+function updateTotalPrice() {
+    let total = 0;
+    const checkboxes = document.querySelectorAll('.cart-item-checkbox');
+    checkboxes.forEach((checkbox, index) => {
+        if (checkbox.checked) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            total += cart[index].price * cart[index].quantity;
+        }
+    });
+    document.getElementById('total_price').innerText = `Tổng tiền: ${total.toLocaleString()} đ`;
+}
+
+// Đính kèm sự kiện cho nút thêm vào giỏ hàng
+document.getElementById('add_to_cart_button').addEventListener('click', addToCart);
+
+// Đính kèm sự kiện cho biểu tượng giỏ hàng
+document.getElementById('cart_icon').addEventListener('click', showCartDetails);
+document.getElementById('cart_icon_mobile').addEventListener('click', showCartDetails);
+
+// Xử lý sự kiện chọn kích thước
+function changeColor(button) {
+    document.querySelectorAll('.box_size').forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+}
+
+// Đính kèm sự kiện cho các nút kích thước
+document.querySelectorAll('.box_size').forEach(button => {
+    button.addEventListener('click', () => changeColor(button));
+});
+
+// Khởi tạo số lượng sản phẩm trong giỏ khi tải trang
+updateCartCount();
+
+// chuyển sang trang mua sản phẩm
+document.getElementById('buy_now_button').addEventListener('click', function() {
+    window.location.href = 'MuaHang.html';
+});
             </script>
 </body>
 </html>
